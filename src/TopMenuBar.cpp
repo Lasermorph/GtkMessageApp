@@ -18,7 +18,6 @@ TopMenuBar::~TopMenuBar()
 	if (fileMenu != 0x0)
 	{
 		g_object_unref(fileMenu);
-		fileMenu = 0x0;
 	}
 
 	if (editMenu != 0x0)
