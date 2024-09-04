@@ -1,0 +1,1093 @@
+==231862== Memcheck, a memory error detector
+==231862== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==231862== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==231862== Command: ./program.exec
+==231862== 
+
+(program.exec:231862): Gtk-WARNING **: 22:17:13.834: Unknown key gtk-modules in /home/stefan/.config/gtk-4.0/settings.ini
+
+(program.exec:231862): Gtk-CRITICAL **: 22:17:15.017: gtk_button_set_label: assertion 'GTK_IS_BUTTON (button)' failed
+
+(program.exec:231862): Gtk-CRITICAL **: 22:17:15.047: gtk_box_append: assertion 'GTK_IS_WIDGET (child)' failed
+==231862== realloc() with size 0
+==231862==    at 0x484BE40: realloc (vg_replace_malloc.c:1800)
+==231862==    by 0xFB49006: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB502DB: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB6565E: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB65ABC: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB5CB5E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xEE35F14: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE35FF4: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEEB1185: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE33F17: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE3C3E6: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xD951347: UnknownInlinedFun (wayland-eglhandle.c:65)
+==231862==    by 0xD951347: loadEGLExternalPlatform (wayland-external-exports.c:110)
+==231862==  Address 0x9061760 is 0 bytes after a block of size 0 alloc'd
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0xFB48FF3: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB502DB: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB6565E: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB65ABC: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB5CB5E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xEE35F14: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE35FF4: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEEB1185: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE33F17: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE3C3E6: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xD951347: UnknownInlinedFun (wayland-eglhandle.c:65)
+==231862==    by 0xD951347: loadEGLExternalPlatform (wayland-external-exports.c:110)
+==231862== 
+==231862== posix_memalign() invalid size value: 0
+==231862==    at 0x484C928: posix_memalign (vg_replace_malloc.c:2216)
+==231862==    by 0xFB49037: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB502DB: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB6565E: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB65ABC: ??? (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xFB5CB5E: NvGlEglApiInit (in /usr/lib/libnvidia-eglcore.so.560.35.03)
+==231862==    by 0xEE35F14: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE35FF4: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEEB1185: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE33F17: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE3C3E6: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xD951347: UnknownInlinedFun (wayland-eglhandle.c:65)
+==231862==    by 0xD951347: loadEGLExternalPlatform (wayland-external-exports.c:110)
+==231862== 
+==231862== Syscall param write(buf) points to unaddressable byte(s)
+==231862==    at 0x5FA87DD: __libc_write (write.c:26)
+==231862==    by 0x5FA87DD: write (write.c:24)
+==231862==    by 0xD94C1DA: wlEglMemoryIsReadable (wayland-eglutils.c:74)
+==231862==    by 0xD94C387: wlEglIsWaylandWindowValid (wayland-eglsurface.c:99)
+==231862==    by 0xD94EEA5: wlEglCreatePlatformWindowSurfaceHook (wayland-eglsurface.c:2656)
+==231862==    by 0xEEAA814: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE4913F: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0x4D056AB: UnknownInlinedFun (gdksurface.c:1164)
+==231862==    by 0x4D056AB: gdk_gl_context_real_begin_frame (gdkglcontext.c:622)
+==231862==    by 0x4CF4974: gdk_draw_context_begin_frame_full (gdkdrawcontext.c:381)
+==231862==    by 0x4D9F4F1: gsk_gpu_renderer_render (gskgpurenderer.c:397)
+==231862==    by 0x4D2AE11: gsk_renderer_render (gskrenderer.c:511)
+==231862==    by 0x4B161B5: gtk_widget_render (gtkwidget.c:11983)
+==231862==    by 0x4B17468: surface_render (gtkwindow.c:4752)
+==231862==  Address 0x3 is not stack'd, malloc'd or (recently) free'd
+==231862== 
+==231862== Syscall param write(buf) points to unaddressable byte(s)
+==231862==    at 0x5FA87DD: __libc_write (write.c:26)
+==231862==    by 0x5FA87DD: write (write.c:24)
+==231862==    by 0xD94C1DA: wlEglMemoryIsReadable (wayland-eglutils.c:74)
+==231862==    by 0xD94F00E: UnknownInlinedFun (wayland-eglsurface.c:2605)
+==231862==    by 0xD94F00E: wlEglCreatePlatformWindowSurfaceHook (wayland-eglsurface.c:2741)
+==231862==    by 0xEEAA814: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE4913F: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0x4D056AB: UnknownInlinedFun (gdksurface.c:1164)
+==231862==    by 0x4D056AB: gdk_gl_context_real_begin_frame (gdkglcontext.c:622)
+==231862==    by 0x4CF4974: gdk_draw_context_begin_frame_full (gdkdrawcontext.c:381)
+==231862==    by 0x4D9F4F1: gsk_gpu_renderer_render (gskgpurenderer.c:397)
+==231862==    by 0x4D2AE11: gsk_renderer_render (gskrenderer.c:511)
+==231862==    by 0x4B161B5: gtk_widget_render (gtkwidget.c:11983)
+==231862==    by 0x4B17468: surface_render (gtkwindow.c:4752)
+==231862==    by 0x4C83579: _gdk_marshal_BOOLEAN__BOXEDv (gdkmarshalers.c:130)
+==231862==  Address 0x3 is not stack'd, malloc'd or (recently) free'd
+==231862== 
+==231862== Syscall param write(buf) points to unaddressable byte(s)
+==231862==    at 0x5FA87DD: __libc_write (write.c:26)
+==231862==    by 0x5FA87DD: write (write.c:24)
+==231862==    by 0xD94C1DA: wlEglMemoryIsReadable (wayland-eglutils.c:74)
+==231862==    by 0xD94C387: wlEglIsWaylandWindowValid (wayland-eglsurface.c:99)
+==231862==    by 0xD94FAC7: wlEglSwapBuffersWithDamageHook (wayland-eglswap.c:106)
+==231862==    by 0xEEACDA2: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE4E747: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0x4D05D40: gdk_gl_context_real_end_frame (gdkglcontext.c:699)
+==231862==    by 0x4C9CD4A: gdk_wayland_gl_context_end_frame (gdkglcontext-wayland.c:81)
+==231862==    by 0x4CF4B41: gdk_draw_context_end_frame (gdkdrawcontext.c:448)
+==231862==    by 0x4D9F89B: gsk_gpu_renderer_render (gskgpurenderer.c:425)
+==231862==    by 0x4D2AE11: gsk_renderer_render (gskrenderer.c:511)
+==231862==    by 0x4B161B5: gtk_widget_render (gtkwidget.c:11983)
+==231862==  Address 0x3 is not stack'd, malloc'd or (recently) free'd
+==231862== 
+==231862== Syscall param write(buf) points to unaddressable byte(s)
+==231862==    at 0x5FA87DD: __libc_write (write.c:26)
+==231862==    by 0x5FA87DD: write (write.c:24)
+==231862==    by 0xD94C1DA: wlEglMemoryIsReadable (wayland-eglutils.c:74)
+==231862==    by 0xD94C387: wlEglIsWaylandWindowValid (wayland-eglsurface.c:99)
+==231862==    by 0xD94C6FF: wlEglDestroySurface.part.0 (wayland-eglsurface.c:2484)
+==231862==    by 0xD94F780: UnknownInlinedFun (wayland-eglutils.c:105)
+==231862==    by 0xD94F780: wlEglDestroySurfaceHook (wayland-eglsurface.c:2994)
+==231862==    by 0xEEAB16D: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE492C3: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0x4D166FB: gdk_surface_set_egl_native_window (gdksurface.c:1129)
+==231862==    by 0x4CA6BF5: UnknownInlinedFun (gdksurface-wayland.c:927)
+==231862==    by 0x4CA6BF5: UnknownInlinedFun (gdksurface-wayland.c:1244)
+==231862==    by 0x4CA6BF5: gdk_wayland_surface_destroy (gdksurface-wayland.c:1229)
+==231862==    by 0x4D1A7B7: _gdk_surface_destroy_hierarchy.lto_priv.0 (gdksurface.c:973)
+==231862==    by 0x4D1AB96: gdk_surface_destroy (gdksurface.c:1043)
+==231862==    by 0x5ACBD2E: UnknownInlinedFun (gclosure.c:897)
+==231862==    by 0x5ACBD2E: signal_emit_valist_unlocked (gsignal.c:3424)
+==231862==  Address 0x3 is not stack'd, malloc'd or (recently) free'd
+==231862== 
+==231862== 
+==231862== HEAP SUMMARY:
+==231862==     in use at exit: 6,244,208 bytes in 33,085 blocks
+==231862==   total heap usage: 256,633 allocs, 223,548 frees, 72,276,839 bytes allocated
+==231862== 
+==231862== 8 bytes in 1 blocks are definitely lost in loss record 661 of 12,272
+==231862==    at 0x484BE40: realloc (vg_replace_malloc.c:1800)
+==231862==    by 0x1E4D04DA: ???
+==231862==    by 0x1E4B9E9C: ???
+==231862==    by 0x1E4BD43F: ???
+==231862==    by 0x1E4BD7C2: ???
+==231862==    by 0xFBC745E: ???
+==231862==    by 0xFBC7710: ???
+==231862==    by 0xFBD0B89: ???
+==231862==    by 0xFBC97AC: ???
+==231862==    by 0xFBC99A8: ???
+==231862==    by 0xFB40566: ???
+==231862==    by 0xFB408D4: ???
+==231862== 
+==231862== 16 bytes in 1 blocks are possibly lost in loss record 2,278 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x60DD128: UnknownInlinedFun (fcfs.c:33)
+==231862==    by 0x60DD128: FcFontSetSort (fcmatch.c:1351)
+==231862==    by 0x637374A: UnknownInlinedFun (pangofc-fontmap.c:932)
+==231862==    by 0x637374A: fc_thread_func (pangofc-fontmap.c:972)
+==231862==    by 0x59D61B5: g_thread_proxy (gthread.c:835)
+==231862==    by 0x5F3039C: start_thread (pthread_create.c:447)
+==231862==    by 0x5FB52A3: clone (clone.S:100)
+==231862== 
+==231862== 29 bytes in 1 blocks are definitely lost in loss record 3,130 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x1E4D7954: ???
+==231862==    by 0x1E4BDBB8: ???
+==231862==    by 0xFBC745E: ???
+==231862==    by 0xFBC7710: ???
+==231862==    by 0xFBD0B89: ???
+==231862==    by 0xFBC97AC: ???
+==231862==    by 0xFBC99A8: ???
+==231862==    by 0xFB40566: ???
+==231862==    by 0xFB408D4: ???
+==231862==    by 0xFB40A26: ???
+==231862==    by 0xFB5D5EC: ???
+==231862== 
+==231862== 29 bytes in 1 blocks are definitely lost in loss record 3,131 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x1E4D7954: ???
+==231862==    by 0x1E4BDB6B: ???
+==231862==    by 0xFBC745E: ???
+==231862==    by 0xFBC7710: ???
+==231862==    by 0xFBD0B89: ???
+==231862==    by 0xFBC97AC: ???
+==231862==    by 0xFBC99A8: ???
+==231862==    by 0xFB40566: ???
+==231862==    by 0xFB408D4: ???
+==231862==    by 0xFB40A26: ???
+==231862==    by 0xFB5D5EC: ???
+==231862== 
+==231862== 36 bytes in 1 blocks are possibly lost in loss record 5,383 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x59ACB62: g_malloc0 (gmem.c:133)
+==231862==    by 0x550F718: pango_language_from_string (pango-language.c:354)
+==231862==    by 0x550F82B: pango_language_get_default (pango-language.c:301)
+==231862==    by 0x4A126A3: gtk_get_locale_direction (gtkmain.c:776)
+==231862==    by 0x4A1B079: UnknownInlinedFun (gtkmain.c:535)
+==231862==    by 0x4A1B079: UnknownInlinedFun (gtkmain.c:612)
+==231862==    by 0x4A1B079: gtk_init_check (gtkmain.c:596)
+==231862==    by 0x4A1B9AD: gtk_init (gtkmain.c:652)
+==231862==    by 0x493AF5E: gtk_application_startup (gtkapplication.c:259)
+==231862==    by 0x5ACCB61: UnknownInlinedFun (gclosure.c:897)
+==231862==    by 0x5ACCB61: signal_emit_valist_unlocked (gsignal.c:3424)
+==231862==    by 0x5ACCC71: g_signal_emit_valist (gsignal.c:3263)
+==231862==    by 0x5ACCD33: g_signal_emit (gsignal.c:3583)
+==231862==    by 0x58587F2: g_application_register (gapplication.c:2352)
+==231862== 
+==231862== 38 bytes in 1 blocks are definitely lost in loss record 5,620 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x1E4D7954: ???
+==231862==    by 0x1E4BD99A: ???
+==231862==    by 0xFBC745E: ???
+==231862==    by 0xFBC7710: ???
+==231862==    by 0xFBD0B89: ???
+==231862==    by 0xFBC97AC: ???
+==231862==    by 0xFBC99A8: ???
+==231862==    by 0xFB40566: ???
+==231862==    by 0xFB408D4: ???
+==231862==    by 0xFB40A26: ???
+==231862==    by 0xFB5D5EC: ???
+==231862== 
+==231862== 40 bytes in 1 blocks are definitely lost in loss record 6,418 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x1E4D7C18: ???
+==231862==    by 0x1E4DEA2F: ???
+==231862==    by 0x1E4DEABF: ???
+==231862==    by 0x1E4DEB2D: ???
+==231862==    by 0x1E4B4D2E: ???
+==231862==    by 0x1E4BC2FC: ???
+==231862==    by 0x1E4BD873: ???
+==231862==    by 0xFBC745E: ???
+==231862==    by 0xFBC7710: ???
+==231862==    by 0xFBD0B89: ???
+==231862==    by 0xFBC97AC: ???
+==231862== 
+==231862== 88 bytes in 2 blocks are possibly lost in loss record 9,782 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x66269FD: UnknownInlinedFun (wayland-private.h:251)
+==231862==    by 0x66269FD: UnknownInlinedFun (wayland-client.c:451)
+==231862==    by 0x66269FD: proxy_destroy (wayland-client.c:570)
+==231862==    by 0x6628716: UnknownInlinedFun (wayland-client.c:598)
+==231862==    by 0x6628716: wl_proxy_marshal_array_flags (wayland-client.c:939)
+==231862==    by 0x66292FA: wl_proxy_marshal_flags (wayland-client.c:857)
+==231862==    by 0xD94C472: ???
+==231862==    by 0xD94F780: ???
+==231862==    by 0xEEAB16D: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE492C3: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0x4D166FB: gdk_surface_set_egl_native_window (gdksurface.c:1129)
+==231862==    by 0x4CA6BF5: UnknownInlinedFun (gdksurface-wayland.c:927)
+==231862==    by 0x4CA6BF5: UnknownInlinedFun (gdksurface-wayland.c:1244)
+==231862==    by 0x4CA6BF5: gdk_wayland_surface_destroy (gdksurface-wayland.c:1229)
+==231862==    by 0x4D1A7B7: _gdk_surface_destroy_hierarchy.lto_priv.0 (gdksurface.c:973)
+==231862==    by 0x4D1AB96: gdk_surface_destroy (gdksurface.c:1043)
+==231862== 
+==231862== 96 bytes in 1 blocks are possibly lost in loss record 10,681 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x59ACB62: g_malloc0 (gmem.c:133)
+==231862==    by 0x596C55F: UnknownInlinedFun (grcbox.c:106)
+==231862==    by 0x596C55F: g_atomic_rc_box_alloc0 (garcbox.c:87)
+==231862==    by 0x637684A: UnknownInlinedFun (pangofc-fontmap.c:1000)
+==231862==    by 0x637684A: UnknownInlinedFun (pangofc-fontmap.c:2340)
+==231862==    by 0x637684A: pango_fc_font_map_load_fontset (pangofc-fontmap.c:2440)
+==231862==    by 0x5512BE1: pango_context_get_metrics (pango-context.c:713)
+==231862==    by 0x49E98D7: UnknownInlinedFun (gtklabel.c:1057)
+==231862==    by 0x49E98D7: get_default_widths (gtklabel.c:1082)
+==231862==    by 0x49E9C4F: UnknownInlinedFun (gtklabel.c:1112)
+==231862==    by 0x49E9C4F: gtk_label_measure (gtklabel.c:1307)
+==231862==    by 0x4A8CE16: gtk_widget_query_size_for_orientation (gtksizerequest.c:260)
+==231862==    by 0x496328A: UnknownInlinedFun (gtkcenterlayout.c:245)
+==231862==    by 0x496328A: gtk_center_layout_measure (gtkcenterlayout.c:381)
+==231862==    by 0x49F3D67: gtk_layout_manager_measure (gtklayoutmanager.c:341)
+==231862==    by 0x4A8CFE5: gtk_widget_query_size_for_orientation (gtksizerequest.c:216)
+==231862==    by 0x4948568: gtk_bin_layout_measure (gtkbinlayout.c:66)
+==231862== 
+==231862== 96 bytes in 1 blocks are possibly lost in loss record 10,682 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x59ACB62: g_malloc0 (gmem.c:133)
+==231862==    by 0x596C55F: UnknownInlinedFun (grcbox.c:106)
+==231862==    by 0x596C55F: g_atomic_rc_box_alloc0 (garcbox.c:87)
+==231862==    by 0x637684A: UnknownInlinedFun (pangofc-fontmap.c:1000)
+==231862==    by 0x637684A: UnknownInlinedFun (pangofc-fontmap.c:2340)
+==231862==    by 0x637684A: pango_fc_font_map_load_fontset (pangofc-fontmap.c:2440)
+==231862==    by 0x5508B8F: UnknownInlinedFun (itemize.c:902)
+==231862==    by 0x5508B8F: UnknownInlinedFun (itemize.c:962)
+==231862==    by 0x5508B8F: pango_itemize_with_font (itemize.c:1570)
+==231862==    by 0x551DD42: pango_layout_check_lines.part.0.lto_priv.0 (pango-layout.c:4900)
+==231862==    by 0x551209E: UnknownInlinedFun (pango-layout.c:4792)
+==231862==    by 0x551209E: pango_layout_get_extents_internal.lto_priv.0 (pango-layout.c:2925)
+==231862==    by 0x551226D: pango_layout_get_size (pango-layout.c:3166)
+==231862==    by 0x49E9C84: UnknownInlinedFun (gtklabel.c:1118)
+==231862==    by 0x49E9C84: gtk_label_measure (gtklabel.c:1307)
+==231862==    by 0x4A8CE16: gtk_widget_query_size_for_orientation (gtksizerequest.c:260)
+==231862==    by 0x4948568: gtk_bin_layout_measure (gtkbinlayout.c:66)
+==231862==    by 0x49F3D67: gtk_layout_manager_measure (gtklayoutmanager.c:341)
+==231862== 
+==231862== 96 bytes in 4 blocks are possibly lost in loss record 10,683 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x59ACB62: g_malloc0 (gmem.c:133)
+==231862==    by 0x4B2F382: gtk_accessible_value_alloc (gtkaccessiblevalue.c:75)
+==231862==    by 0x4B2F50B: UnknownInlinedFun (gtkaccessiblevalue.c:236)
+==231862==    by 0x4B2F50B: gtk_accessible_value_get_default_for_property (gtkaccessiblevalue.c:1680)
+==231862==    by 0x493CE73: UnknownInlinedFun (gtkaccessibleattributeset.c:54)
+==231862==    by 0x493CE73: UnknownInlinedFun (gtkaccessibleattributeset.c:66)
+==231862==    by 0x493CE73: gtk_at_context_init (gtkatcontext.c:426)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862==    by 0x5ABF97A: UnknownInlinedFun (gobject.c:2923)
+==231862==    by 0x5ABF97A: g_object_new_valist (gobject.c:2945)
+==231862==    by 0x5ABFD2F: g_object_new (gobject.c:2418)
+==231862==    by 0x4BC9970: gtk_at_spi_create_context (gtkatspicontext.c:1876)
+==231862==    by 0x493DD4A: gtk_at_context_create (gtkatcontext.c:704)
+==231862==    by 0x4AFE780: gtk_widget_init (gtkwidget.c:2391)
+==231862== 
+==231862== 96 (24 direct, 72 indirect) bytes in 1 blocks are definitely lost in loss record 10,691 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x1E4DF35F: ???
+==231862==    by 0x1E4CA9F6: ???
+==231862==    by 0x1E4CFC70: ???
+==231862==    by 0x1E4BD259: ???
+==231862==    by 0x1E4BD4ED: ???
+==231862==    by 0x1E4BD7C2: ???
+==231862==    by 0xFBC745E: ???
+==231862==    by 0xFBC7710: ???
+==231862==    by 0xFBD0B89: ???
+==231862==    by 0xFBC97AC: ???
+==231862==    by 0xFBC99A8: ???
+==231862== 
+==231862== 116 bytes in 1 blocks are possibly lost in loss record 11,016 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x2090C293: alloc (alloc.rs:100)
+==231862==    by 0x2090C293: alloc_impl (alloc.rs:183)
+==231862==    by 0x2090C293: allocate (alloc.rs:243)
+==231862==    by 0x2090C293: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+==231862==    by 0x2090C293: new_uninitialized<alloc::alloc::Global> (mod.rs:1750)
+==231862==    by 0x2090C293: fallible_with_capacity<alloc::alloc::Global> (mod.rs:1788)
+==231862==    by 0x2090C293: prepare_resize<alloc::alloc::Global> (mod.rs:2864)
+==231862==    by 0x2090C293: resize_inner<alloc::alloc::Global> (mod.rs:3060)
+==231862==    by 0x2090C293: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2950)
+==231862==    by 0x2090C293: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1231)
+==231862==    by 0x20B3842C: reserve<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1179)
+==231862==    by 0x20B3842C: find_or_find_insert_slot<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::equivalent_key::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID>, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1413)
+==231862==    by 0x20B3842C: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1754)
+==231862==    by 0x20B3DAF2: insert<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState> (map.rs:1106)
+==231862==    by 0x20B3DAF2: add_state<regex_automata::hybrid::dfa::{impl#5}::init_cache::{closure_env#0}> (dfa.rs:2309)
+==231862==    by 0x20B3DAF2: regex_automata::hybrid::dfa::Lazy::init_cache (dfa.rs:2534)
+==231862==    by 0x20B3CDF2: regex_automata::hybrid::dfa::Cache::new (dfa.rs:1891)
+==231862==    by 0x20B5226B: new (regex.rs:613)
+==231862==    by 0x20B5226B: create_cache (regex.rs:192)
+==231862==    by 0x20B5226B: {closure#0} (wrappers.rs:788)
+==231862==    by 0x20B5226B: map<&regex_automata::meta::wrappers::HybridEngine, regex_automata::hybrid::regex::Cache, regex_automata::meta::wrappers::{impl#11}::new::{closure_env#0}> (option.rs:1075)
+==231862==    by 0x20B5226B: new (wrappers.rs:788)
+==231862==    by 0x20B5226B: create_cache (wrappers.rs:541)
+==231862==    by 0x20B5226B: <regex_automata::meta::strategy::Core as regex_automata::meta::strategy::Strategy>::create_cache (strategy.rs:679)
+==231862==    by 0x20B46B75: regex_automata::meta::regex::Builder::build_many_from_hir::{{closure}} (regex.rs:3556)
+==231862==    by 0x2090B1A2: call<(), (dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global> (boxed.rs:2077)
+==231862==    by 0x2090B1A2: regex_automata::util::pool::inner::Pool<T,F>::get_slow (pool.rs:568)
+==231862==    by 0x20B2189D: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:533)
+==231862==    by 0x20B2189D: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:182)
+==231862==    by 0x20B2189D: search_slots (regex.rs:1134)
+==231862==    by 0x20B2189D: search_captures (regex.rs:1065)
+==231862==    by 0x20B2189D: regex::regex::string::Regex::captures_at (string.rs:1134)
+==231862==    by 0x20B21E85: captures (string.rs:356)
+==231862==    by 0x20B21E85: locale_config::LanguageRange::from_unix (lib.rs:312)
+==231862==    by 0x209D79D0: locale_from_environment (api.rs:489)
+==231862==    by 0x209D79D0: rsvg::api::<impl rsvg::accept_language::UserLanguage>::new (api.rs:501)
+==231862==    by 0x209D7CAA: rsvg::api::CairoRenderer::new (api.rs:526)
+==231862== 
+==231862== 116 bytes in 1 blocks are possibly lost in loss record 11,017 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x2090C293: alloc (alloc.rs:100)
+==231862==    by 0x2090C293: alloc_impl (alloc.rs:183)
+==231862==    by 0x2090C293: allocate (alloc.rs:243)
+==231862==    by 0x2090C293: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+==231862==    by 0x2090C293: new_uninitialized<alloc::alloc::Global> (mod.rs:1750)
+==231862==    by 0x2090C293: fallible_with_capacity<alloc::alloc::Global> (mod.rs:1788)
+==231862==    by 0x2090C293: prepare_resize<alloc::alloc::Global> (mod.rs:2864)
+==231862==    by 0x2090C293: resize_inner<alloc::alloc::Global> (mod.rs:3060)
+==231862==    by 0x2090C293: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2950)
+==231862==    by 0x2090C293: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1231)
+==231862==    by 0x20B3842C: reserve<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1179)
+==231862==    by 0x20B3842C: find_or_find_insert_slot<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::equivalent_key::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID>, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1413)
+==231862==    by 0x20B3842C: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1754)
+==231862==    by 0x20B3DAF2: insert<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState> (map.rs:1106)
+==231862==    by 0x20B3DAF2: add_state<regex_automata::hybrid::dfa::{impl#5}::init_cache::{closure_env#0}> (dfa.rs:2309)
+==231862==    by 0x20B3DAF2: regex_automata::hybrid::dfa::Lazy::init_cache (dfa.rs:2534)
+==231862==    by 0x20B3CDF2: regex_automata::hybrid::dfa::Cache::new (dfa.rs:1891)
+==231862==    by 0x20B52282: new (regex.rs:614)
+==231862==    by 0x20B52282: create_cache (regex.rs:192)
+==231862==    by 0x20B52282: {closure#0} (wrappers.rs:788)
+==231862==    by 0x20B52282: map<&regex_automata::meta::wrappers::HybridEngine, regex_automata::hybrid::regex::Cache, regex_automata::meta::wrappers::{impl#11}::new::{closure_env#0}> (option.rs:1075)
+==231862==    by 0x20B52282: new (wrappers.rs:788)
+==231862==    by 0x20B52282: create_cache (wrappers.rs:541)
+==231862==    by 0x20B52282: <regex_automata::meta::strategy::Core as regex_automata::meta::strategy::Strategy>::create_cache (strategy.rs:679)
+==231862==    by 0x20B46B75: regex_automata::meta::regex::Builder::build_many_from_hir::{{closure}} (regex.rs:3556)
+==231862==    by 0x2090B1A2: call<(), (dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global> (boxed.rs:2077)
+==231862==    by 0x2090B1A2: regex_automata::util::pool::inner::Pool<T,F>::get_slow (pool.rs:568)
+==231862==    by 0x20B2189D: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:533)
+==231862==    by 0x20B2189D: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:182)
+==231862==    by 0x20B2189D: search_slots (regex.rs:1134)
+==231862==    by 0x20B2189D: search_captures (regex.rs:1065)
+==231862==    by 0x20B2189D: regex::regex::string::Regex::captures_at (string.rs:1134)
+==231862==    by 0x20B21E85: captures (string.rs:356)
+==231862==    by 0x20B21E85: locale_config::LanguageRange::from_unix (lib.rs:312)
+==231862==    by 0x209D79D0: locale_from_environment (api.rs:489)
+==231862==    by 0x209D79D0: rsvg::api::<impl rsvg::accept_language::UserLanguage>::new (api.rs:501)
+==231862==    by 0x209D7CAA: rsvg::api::CairoRenderer::new (api.rs:526)
+==231862== 
+==231862== 116 bytes in 1 blocks are possibly lost in loss record 11,018 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x2090C293: alloc (alloc.rs:100)
+==231862==    by 0x2090C293: alloc_impl (alloc.rs:183)
+==231862==    by 0x2090C293: allocate (alloc.rs:243)
+==231862==    by 0x2090C293: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+==231862==    by 0x2090C293: new_uninitialized<alloc::alloc::Global> (mod.rs:1750)
+==231862==    by 0x2090C293: fallible_with_capacity<alloc::alloc::Global> (mod.rs:1788)
+==231862==    by 0x2090C293: prepare_resize<alloc::alloc::Global> (mod.rs:2864)
+==231862==    by 0x2090C293: resize_inner<alloc::alloc::Global> (mod.rs:3060)
+==231862==    by 0x2090C293: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2950)
+==231862==    by 0x2090C293: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1231)
+==231862==    by 0x20B3842C: reserve<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1179)
+==231862==    by 0x20B3842C: find_or_find_insert_slot<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::equivalent_key::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID>, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1413)
+==231862==    by 0x20B3842C: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1754)
+==231862==    by 0x20B3DAF2: insert<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState> (map.rs:1106)
+==231862==    by 0x20B3DAF2: add_state<regex_automata::hybrid::dfa::{impl#5}::init_cache::{closure_env#0}> (dfa.rs:2309)
+==231862==    by 0x20B3DAF2: regex_automata::hybrid::dfa::Lazy::init_cache (dfa.rs:2534)
+==231862==    by 0x20B3CDF2: regex_automata::hybrid::dfa::Cache::new (dfa.rs:1891)
+==231862==    by 0x20B52282: new (regex.rs:614)
+==231862==    by 0x20B52282: create_cache (regex.rs:192)
+==231862==    by 0x20B52282: {closure#0} (wrappers.rs:788)
+==231862==    by 0x20B52282: map<&regex_automata::meta::wrappers::HybridEngine, regex_automata::hybrid::regex::Cache, regex_automata::meta::wrappers::{impl#11}::new::{closure_env#0}> (option.rs:1075)
+==231862==    by 0x20B52282: new (wrappers.rs:788)
+==231862==    by 0x20B52282: create_cache (wrappers.rs:541)
+==231862==    by 0x20B52282: <regex_automata::meta::strategy::Core as regex_automata::meta::strategy::Strategy>::create_cache (strategy.rs:679)
+==231862==    by 0x20B46B75: regex_automata::meta::regex::Builder::build_many_from_hir::{{closure}} (regex.rs:3556)
+==231862==    by 0x2090B1A2: call<(), (dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global> (boxed.rs:2077)
+==231862==    by 0x2090B1A2: regex_automata::util::pool::inner::Pool<T,F>::get_slow (pool.rs:568)
+==231862==    by 0x20B21BB4: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:533)
+==231862==    by 0x20B21BB4: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:182)
+==231862==    by 0x20B21BB4: search_half (regex.rs:979)
+==231862==    by 0x20B21BB4: regex::regex::string::Regex::is_match_at (string.rs:1057)
+==231862==    by 0x20B21FB8: is_match (string.rs:205)
+==231862==    by 0x20B21FB8: locale_config::LanguageRange::from_unix (lib.rs:393)
+==231862==    by 0x209D79D0: locale_from_environment (api.rs:489)
+==231862==    by 0x209D79D0: rsvg::api::<impl rsvg::accept_language::UserLanguage>::new (api.rs:501)
+==231862==    by 0x209D7CAA: rsvg::api::CairoRenderer::new (api.rs:526)
+==231862== 
+==231862== 152 (112 direct, 40 indirect) bytes in 1 blocks are definitely lost in loss record 11,298 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x1E4D6970: ???
+==231862==    by 0x1E4BC518: ???
+==231862==    by 0x1E4BD873: ???
+==231862==    by 0xFBC745E: ???
+==231862==    by 0xFBC7710: ???
+==231862==    by 0xFBD0B89: ???
+==231862==    by 0xFBC97AC: ???
+==231862==    by 0xFBC99A8: ???
+==231862==    by 0xFB40566: ???
+==231862==    by 0xFB408D4: ???
+==231862==    by 0xFB40A26: ???
+==231862== 
+==231862== 216 bytes in 1 blocks are possibly lost in loss record 11,451 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x2090C633: alloc (alloc.rs:100)
+==231862==    by 0x2090C633: alloc_impl (alloc.rs:183)
+==231862==    by 0x2090C633: allocate (alloc.rs:243)
+==231862==    by 0x2090C633: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+==231862==    by 0x2090C633: new_uninitialized<alloc::alloc::Global> (mod.rs:1750)
+==231862==    by 0x2090C633: fallible_with_capacity<alloc::alloc::Global> (mod.rs:1788)
+==231862==    by 0x2090C633: prepare_resize<alloc::alloc::Global> (mod.rs:2864)
+==231862==    by 0x2090C633: resize_inner<alloc::alloc::Global> (mod.rs:3060)
+==231862==    by 0x2090C633: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2950)
+==231862==    by 0x2090C633: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1231)
+==231862==    by 0x20B3820C: reserve<(alloc::sync::Arc<str, alloc::alloc::Global>, regex_automata::util::primitives::SmallIndex), alloc::alloc::Global, hashbrown::map::make_hasher::{closure_env#0}<alloc::sync::Arc<str, alloc::alloc::Global>, regex_automata::util::primitives::SmallIndex, std::hash::random::RandomState>> (mod.rs:1179)
+==231862==    by 0x20B3820C: find_or_find_insert_slot<(alloc::sync::Arc<str, alloc::alloc::Global>, regex_automata::util::primitives::SmallIndex), alloc::alloc::Global, hashbrown::map::equivalent_key::{closure_env#0}<alloc::sync::Arc<str, alloc::alloc::Global>, alloc::sync::Arc<str, alloc::alloc::Global>, regex_automata::util::primitives::SmallIndex>, hashbrown::map::make_hasher::{closure_env#0}<alloc::sync::Arc<str, alloc::alloc::Global>, regex_automata::util::primitives::SmallIndex, std::hash::random::RandomState>> (mod.rs:1413)
+==231862==    by 0x20B3820C: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1754)
+==231862==    by 0x20B5DFED: insert<alloc::sync::Arc<str, alloc::alloc::Global>, regex_automata::util::primitives::SmallIndex, std::hash::random::RandomState> (map.rs:1106)
+==231862==    by 0x20B5DFED: add_explicit_group<&alloc::sync::Arc<str, alloc::alloc::Global>> (captures.rs:2239)
+==231862==    by 0x20B5DFED: new<core::iter::adapters::map::Map<core::slice::iter::Iter<alloc::vec::Vec<core::option::Option<alloc::sync::Arc<str, alloc::alloc::Global>>, alloc::alloc::Global>>, regex_automata::nfa::thompson::nfa::{impl#2}::set_captures::{closure_env#0}>, core::iter::adapters::map::Map<core::slice::iter::Iter<core::option::Option<alloc::sync::Arc<str, alloc::alloc::Global>>>, regex_automata::nfa::thompson::nfa::{impl#2}::set_captures::{closure#0}::{closure_env#0}>, &alloc::sync::Arc<str, alloc::alloc::Global>> (captures.rs:1605)
+==231862==    by 0x20B5DFED: set_captures (nfa.rs:1432)
+==231862==    by 0x20B5DFED: regex_automata::nfa::thompson::builder::Builder::build (builder.rs:439)
+==231862==    by 0x20B60E0B: regex_automata::nfa::thompson::compiler::Compiler::compile (compiler.rs:985)
+==231862==    by 0x20B4882A: build_many_from_hir<&regex_syntax::hir::Hir> (compiler.rs:881)
+==231862==    by 0x20B4882A: new (strategy.rs:471)
+==231862==    by 0x20B4882A: regex_automata::meta::strategy::new (strategy.rs:153)
+==231862==    by 0x20B46586: build_many_from_hir<regex_syntax::hir::Hir> (regex.rs:3553)
+==231862==    by 0x20B46586: build_many<&str> (regex.rs:3441)
+==231862==    by 0x20B46586: regex_automata::meta::regex::Builder::build (regex.rs:3360)
+==231862==    by 0x20B244FC: build_one_string (builders.rs:79)
+==231862==    by 0x20B244FC: regex::builders::string::RegexBuilder::build (builders.rs:233)
+==231862==    by 0x20B24A2D: regex::regex::string::Regex::new (string.rs:181)
+==231862==    by 0x2090B83F: __static_ref_initialize (lib.rs:172)
+==231862==    by 0x2090B83F: call_once<fn() -> regex::regex::string::Regex, ()> (function.rs:250)
+==231862==    by 0x2090B83F: {closure#0}<regex::regex::string::Regex, fn() -> regex::regex::string::Regex> (inline_lazy.rs:31)
+==231862==    by 0x2090B83F: {closure#0}<lazy_static::lazy::{impl#0}::get::{closure_env#0}<regex::regex::string::Regex, fn() -> regex::regex::string::Regex>> (once.rs:149)
+==231862==    by 0x2090B83F: std::sys::sync::once::futex::Once::call (futex.rs:124)
+==231862==    by 0x20B22117: call_once<lazy_static::lazy::{impl#0}::get::{closure_env#0}<regex::regex::string::Regex, fn() -> regex::regex::string::Regex>> (once.rs:149)
+==231862==    by 0x20B22117: get<regex::regex::string::Regex, fn() -> regex::regex::string::Regex> (inline_lazy.rs:30)
+==231862==    by 0x20B22117: __stability (lib.rs:142)
+==231862==    by 0x20B22117: deref (lib.rs:144)
+==231862==    by 0x20B22117: locale_config::LanguageRange::from_unix (lib.rs:312)
+==231862==    by 0x209D79D0: locale_from_environment (api.rs:489)
+==231862==    by 0x209D79D0: rsvg::api::<impl rsvg::accept_language::UserLanguage>::new (api.rs:501)
+==231862== 
+==231862== 232 bytes in 2 blocks are possibly lost in loss record 11,479 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x2090C293: alloc (alloc.rs:100)
+==231862==    by 0x2090C293: alloc_impl (alloc.rs:183)
+==231862==    by 0x2090C293: allocate (alloc.rs:243)
+==231862==    by 0x2090C293: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+==231862==    by 0x2090C293: new_uninitialized<alloc::alloc::Global> (mod.rs:1750)
+==231862==    by 0x2090C293: fallible_with_capacity<alloc::alloc::Global> (mod.rs:1788)
+==231862==    by 0x2090C293: prepare_resize<alloc::alloc::Global> (mod.rs:2864)
+==231862==    by 0x2090C293: resize_inner<alloc::alloc::Global> (mod.rs:3060)
+==231862==    by 0x2090C293: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2950)
+==231862==    by 0x2090C293: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1231)
+==231862==    by 0x20B3842C: reserve<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1179)
+==231862==    by 0x20B3842C: find_or_find_insert_slot<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::equivalent_key::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID>, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1413)
+==231862==    by 0x20B3842C: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1754)
+==231862==    by 0x20B3DAF2: insert<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState> (map.rs:1106)
+==231862==    by 0x20B3DAF2: add_state<regex_automata::hybrid::dfa::{impl#5}::init_cache::{closure_env#0}> (dfa.rs:2309)
+==231862==    by 0x20B3DAF2: regex_automata::hybrid::dfa::Lazy::init_cache (dfa.rs:2534)
+==231862==    by 0x20B3CDF2: regex_automata::hybrid::dfa::Cache::new (dfa.rs:1891)
+==231862==    by 0x20B5226B: new (regex.rs:613)
+==231862==    by 0x20B5226B: create_cache (regex.rs:192)
+==231862==    by 0x20B5226B: {closure#0} (wrappers.rs:788)
+==231862==    by 0x20B5226B: map<&regex_automata::meta::wrappers::HybridEngine, regex_automata::hybrid::regex::Cache, regex_automata::meta::wrappers::{impl#11}::new::{closure_env#0}> (option.rs:1075)
+==231862==    by 0x20B5226B: new (wrappers.rs:788)
+==231862==    by 0x20B5226B: create_cache (wrappers.rs:541)
+==231862==    by 0x20B5226B: <regex_automata::meta::strategy::Core as regex_automata::meta::strategy::Strategy>::create_cache (strategy.rs:679)
+==231862==    by 0x20B46B75: regex_automata::meta::regex::Builder::build_many_from_hir::{{closure}} (regex.rs:3556)
+==231862==    by 0x2090B3C7: call<(), (dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global> (boxed.rs:2077)
+==231862==    by 0x2090B3C7: regex_automata::util::pool::inner::Pool<T,F>::get_slow (pool.rs:590)
+==231862==    by 0x20B2189D: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:533)
+==231862==    by 0x20B2189D: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:182)
+==231862==    by 0x20B2189D: search_slots (regex.rs:1134)
+==231862==    by 0x20B2189D: search_captures (regex.rs:1065)
+==231862==    by 0x20B2189D: regex::regex::string::Regex::captures_at (string.rs:1134)
+==231862==    by 0x20B21E85: captures (string.rs:356)
+==231862==    by 0x20B21E85: locale_config::LanguageRange::from_unix (lib.rs:312)
+==231862==    by 0x209D79D0: locale_from_environment (api.rs:489)
+==231862==    by 0x209D79D0: rsvg::api::<impl rsvg::accept_language::UserLanguage>::new (api.rs:501)
+==231862==    by 0x209D7CAA: rsvg::api::CairoRenderer::new (api.rs:526)
+==231862== 
+==231862== 232 bytes in 2 blocks are possibly lost in loss record 11,480 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x2090C293: alloc (alloc.rs:100)
+==231862==    by 0x2090C293: alloc_impl (alloc.rs:183)
+==231862==    by 0x2090C293: allocate (alloc.rs:243)
+==231862==    by 0x2090C293: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+==231862==    by 0x2090C293: new_uninitialized<alloc::alloc::Global> (mod.rs:1750)
+==231862==    by 0x2090C293: fallible_with_capacity<alloc::alloc::Global> (mod.rs:1788)
+==231862==    by 0x2090C293: prepare_resize<alloc::alloc::Global> (mod.rs:2864)
+==231862==    by 0x2090C293: resize_inner<alloc::alloc::Global> (mod.rs:3060)
+==231862==    by 0x2090C293: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2950)
+==231862==    by 0x2090C293: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1231)
+==231862==    by 0x20B3842C: reserve<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1179)
+==231862==    by 0x20B3842C: find_or_find_insert_slot<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::equivalent_key::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID>, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1413)
+==231862==    by 0x20B3842C: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1754)
+==231862==    by 0x20B3DAF2: insert<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState> (map.rs:1106)
+==231862==    by 0x20B3DAF2: add_state<regex_automata::hybrid::dfa::{impl#5}::init_cache::{closure_env#0}> (dfa.rs:2309)
+==231862==    by 0x20B3DAF2: regex_automata::hybrid::dfa::Lazy::init_cache (dfa.rs:2534)
+==231862==    by 0x20B3CDF2: regex_automata::hybrid::dfa::Cache::new (dfa.rs:1891)
+==231862==    by 0x20B52282: new (regex.rs:614)
+==231862==    by 0x20B52282: create_cache (regex.rs:192)
+==231862==    by 0x20B52282: {closure#0} (wrappers.rs:788)
+==231862==    by 0x20B52282: map<&regex_automata::meta::wrappers::HybridEngine, regex_automata::hybrid::regex::Cache, regex_automata::meta::wrappers::{impl#11}::new::{closure_env#0}> (option.rs:1075)
+==231862==    by 0x20B52282: new (wrappers.rs:788)
+==231862==    by 0x20B52282: create_cache (wrappers.rs:541)
+==231862==    by 0x20B52282: <regex_automata::meta::strategy::Core as regex_automata::meta::strategy::Strategy>::create_cache (strategy.rs:679)
+==231862==    by 0x20B46B75: regex_automata::meta::regex::Builder::build_many_from_hir::{{closure}} (regex.rs:3556)
+==231862==    by 0x2090B3C7: call<(), (dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global> (boxed.rs:2077)
+==231862==    by 0x2090B3C7: regex_automata::util::pool::inner::Pool<T,F>::get_slow (pool.rs:590)
+==231862==    by 0x20B2189D: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:533)
+==231862==    by 0x20B2189D: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:182)
+==231862==    by 0x20B2189D: search_slots (regex.rs:1134)
+==231862==    by 0x20B2189D: search_captures (regex.rs:1065)
+==231862==    by 0x20B2189D: regex::regex::string::Regex::captures_at (string.rs:1134)
+==231862==    by 0x20B21E85: captures (string.rs:356)
+==231862==    by 0x20B21E85: locale_config::LanguageRange::from_unix (lib.rs:312)
+==231862==    by 0x209D79D0: locale_from_environment (api.rs:489)
+==231862==    by 0x209D79D0: rsvg::api::<impl rsvg::accept_language::UserLanguage>::new (api.rs:501)
+==231862==    by 0x209D7CAA: rsvg::api::CairoRenderer::new (api.rs:526)
+==231862== 
+==231862== 232 bytes in 2 blocks are possibly lost in loss record 11,481 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x2090C293: alloc (alloc.rs:100)
+==231862==    by 0x2090C293: alloc_impl (alloc.rs:183)
+==231862==    by 0x2090C293: allocate (alloc.rs:243)
+==231862==    by 0x2090C293: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+==231862==    by 0x2090C293: new_uninitialized<alloc::alloc::Global> (mod.rs:1750)
+==231862==    by 0x2090C293: fallible_with_capacity<alloc::alloc::Global> (mod.rs:1788)
+==231862==    by 0x2090C293: prepare_resize<alloc::alloc::Global> (mod.rs:2864)
+==231862==    by 0x2090C293: resize_inner<alloc::alloc::Global> (mod.rs:3060)
+==231862==    by 0x2090C293: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2950)
+==231862==    by 0x2090C293: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1231)
+==231862==    by 0x20B3842C: reserve<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1179)
+==231862==    by 0x20B3842C: find_or_find_insert_slot<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::equivalent_key::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID>, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1413)
+==231862==    by 0x20B3842C: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1754)
+==231862==    by 0x20B3DAF2: insert<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState> (map.rs:1106)
+==231862==    by 0x20B3DAF2: add_state<regex_automata::hybrid::dfa::{impl#5}::init_cache::{closure_env#0}> (dfa.rs:2309)
+==231862==    by 0x20B3DAF2: regex_automata::hybrid::dfa::Lazy::init_cache (dfa.rs:2534)
+==231862==    by 0x20B3CDF2: regex_automata::hybrid::dfa::Cache::new (dfa.rs:1891)
+==231862==    by 0x20B52282: new (regex.rs:614)
+==231862==    by 0x20B52282: create_cache (regex.rs:192)
+==231862==    by 0x20B52282: {closure#0} (wrappers.rs:788)
+==231862==    by 0x20B52282: map<&regex_automata::meta::wrappers::HybridEngine, regex_automata::hybrid::regex::Cache, regex_automata::meta::wrappers::{impl#11}::new::{closure_env#0}> (option.rs:1075)
+==231862==    by 0x20B52282: new (wrappers.rs:788)
+==231862==    by 0x20B52282: create_cache (wrappers.rs:541)
+==231862==    by 0x20B52282: <regex_automata::meta::strategy::Core as regex_automata::meta::strategy::Strategy>::create_cache (strategy.rs:679)
+==231862==    by 0x20B46B75: regex_automata::meta::regex::Builder::build_many_from_hir::{{closure}} (regex.rs:3556)
+==231862==    by 0x2090B3C7: call<(), (dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global> (boxed.rs:2077)
+==231862==    by 0x2090B3C7: regex_automata::util::pool::inner::Pool<T,F>::get_slow (pool.rs:590)
+==231862==    by 0x20B21BB4: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:533)
+==231862==    by 0x20B21BB4: get<regex_automata::meta::regex::Cache, alloc::boxed::Box<(dyn core::ops::function::Fn<(), Output=regex_automata::meta::regex::Cache> + core::marker::Send + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe + core::panic::unwind_safe::UnwindSafe), alloc::alloc::Global>> (pool.rs:182)
+==231862==    by 0x20B21BB4: search_half (regex.rs:979)
+==231862==    by 0x20B21BB4: regex::regex::string::Regex::is_match_at (string.rs:1057)
+==231862==    by 0x20B21FB8: is_match (string.rs:205)
+==231862==    by 0x20B21FB8: locale_config::LanguageRange::from_unix (lib.rs:393)
+==231862==    by 0x209D79D0: locale_from_environment (api.rs:489)
+==231862==    by 0x209D79D0: rsvg::api::<impl rsvg::accept_language::UserLanguage>::new (api.rs:501)
+==231862==    by 0x209D7CAA: rsvg::api::CairoRenderer::new (api.rs:526)
+==231862== 
+==231862== 288 bytes in 4 blocks are possibly lost in loss record 11,603 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x59ABE4A: g_malloc (gmem.c:100)
+==231862==    by 0x493CF3E: UnknownInlinedFun (gtkaccessibleattributeset.c:49)
+==231862==    by 0x493CF3E: UnknownInlinedFun (gtkaccessibleattributeset.c:66)
+==231862==    by 0x493CF3E: gtk_at_context_init (gtkatcontext.c:434)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862==    by 0x5ABF97A: UnknownInlinedFun (gobject.c:2923)
+==231862==    by 0x5ABF97A: g_object_new_valist (gobject.c:2945)
+==231862==    by 0x5ABFD2F: g_object_new (gobject.c:2418)
+==231862==    by 0x4BC9970: gtk_at_spi_create_context (gtkatspicontext.c:1876)
+==231862==    by 0x493DD4A: gtk_at_context_create (gtkatcontext.c:704)
+==231862==    by 0x4AFE780: gtk_widget_init (gtkwidget.c:2391)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862== 
+==231862== 288 bytes in 12 blocks are possibly lost in loss record 11,604 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x59ACB62: g_malloc0 (gmem.c:133)
+==231862==    by 0x4B2F382: gtk_accessible_value_alloc (gtkaccessiblevalue.c:75)
+==231862==    by 0x4B2F4EB: UnknownInlinedFun (gtkaccessiblevalue.c:296)
+==231862==    by 0x4B2F4EB: gtk_accessible_value_get_default_for_property (gtkaccessiblevalue.c:1686)
+==231862==    by 0x493CE73: UnknownInlinedFun (gtkaccessibleattributeset.c:54)
+==231862==    by 0x493CE73: UnknownInlinedFun (gtkaccessibleattributeset.c:66)
+==231862==    by 0x493CE73: gtk_at_context_init (gtkatcontext.c:426)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862==    by 0x5ABF97A: UnknownInlinedFun (gobject.c:2923)
+==231862==    by 0x5ABF97A: g_object_new_valist (gobject.c:2945)
+==231862==    by 0x5ABFD2F: g_object_new (gobject.c:2418)
+==231862==    by 0x4BC9970: gtk_at_spi_create_context (gtkatspicontext.c:1876)
+==231862==    by 0x493DD4A: gtk_at_context_create (gtkatcontext.c:704)
+==231862==    by 0x4AFE780: gtk_widget_init (gtkwidget.c:2391)
+==231862== 
+==231862== 320 bytes in 4 blocks are possibly lost in loss record 11,639 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x59ACB62: g_malloc0 (gmem.c:133)
+==231862==    by 0x59B94EF: UnknownInlinedFun (grcbox.c:106)
+==231862==    by 0x59B94EF: g_rc_box_alloc0 (grcbox.c:204)
+==231862==    by 0x493CE13: UnknownInlinedFun (gtkaccessibleattributeset.c:64)
+==231862==    by 0x493CE13: gtk_at_context_init (gtkatcontext.c:426)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862==    by 0x5ABF97A: UnknownInlinedFun (gobject.c:2923)
+==231862==    by 0x5ABF97A: g_object_new_valist (gobject.c:2945)
+==231862==    by 0x5ABFD2F: g_object_new (gobject.c:2418)
+==231862==    by 0x4BC9970: gtk_at_spi_create_context (gtkatspicontext.c:1876)
+==231862==    by 0x493DD4A: gtk_at_context_create (gtkatcontext.c:704)
+==231862==    by 0x4AFE780: gtk_widget_init (gtkwidget.c:2391)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862== 
+==231862== 320 bytes in 4 blocks are possibly lost in loss record 11,640 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x59ACB62: g_malloc0 (gmem.c:133)
+==231862==    by 0x59B94EF: UnknownInlinedFun (grcbox.c:106)
+==231862==    by 0x59B94EF: g_rc_box_alloc0 (grcbox.c:204)
+==231862==    by 0x493CE8B: UnknownInlinedFun (gtkaccessibleattributeset.c:64)
+==231862==    by 0x493CE8B: gtk_at_context_init (gtkatcontext.c:430)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862==    by 0x5ABF97A: UnknownInlinedFun (gobject.c:2923)
+==231862==    by 0x5ABF97A: g_object_new_valist (gobject.c:2945)
+==231862==    by 0x5ABFD2F: g_object_new (gobject.c:2418)
+==231862==    by 0x4BC9970: gtk_at_spi_create_context (gtkatspicontext.c:1876)
+==231862==    by 0x493DD4A: gtk_at_context_create (gtkatcontext.c:704)
+==231862==    by 0x4AFE780: gtk_widget_init (gtkwidget.c:2391)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862== 
+==231862== 320 bytes in 4 blocks are possibly lost in loss record 11,641 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x59ACB62: g_malloc0 (gmem.c:133)
+==231862==    by 0x59B94EF: UnknownInlinedFun (grcbox.c:106)
+==231862==    by 0x59B94EF: g_rc_box_alloc0 (grcbox.c:204)
+==231862==    by 0x493CF0B: UnknownInlinedFun (gtkaccessibleattributeset.c:64)
+==231862==    by 0x493CF0B: gtk_at_context_init (gtkatcontext.c:434)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862==    by 0x5ABF97A: UnknownInlinedFun (gobject.c:2923)
+==231862==    by 0x5ABF97A: g_object_new_valist (gobject.c:2945)
+==231862==    by 0x5ABFD2F: g_object_new (gobject.c:2418)
+==231862==    by 0x4BC9970: gtk_at_spi_create_context (gtkatspicontext.c:1876)
+==231862==    by 0x493DD4A: gtk_at_context_create (gtkatcontext.c:704)
+==231862==    by 0x4AFE780: gtk_widget_init (gtkwidget.c:2391)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862== 
+==231862== 336 bytes in 1 blocks are possibly lost in loss record 11,656 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x4011003: calloc (rtld-malloc.h:44)
+==231862==    by 0x4011003: allocate_dtv (dl-tls.c:395)
+==231862==    by 0x4011AE1: _dl_allocate_tls (dl-tls.c:664)
+==231862==    by 0x5F30F14: allocate_stack (allocatestack.c:429)
+==231862==    by 0x5F30F14: pthread_create@@GLIBC_2.34 (pthread_create.c:655)
+==231862==    by 0x59D6FC5: UnknownInlinedFun (gthread-posix.c:1298)
+==231862==    by 0x59D6FC5: g_thread_new_internal (gthread.c:939)
+==231862==    by 0x59D71ED: g_thread_new (gthread.c:892)
+==231862==    by 0x59DBB31: g_thread_pool_new_full (gthreadpool.c:633)
+==231862==    by 0x5823E5E: UnknownInlinedFun (gtask.c:2411)
+==231862==    by 0x5823E5E: g_task_get_type_once (gtask.c:629)
+==231862==    by 0x5823FA4: g_task_get_type (gtask.c:629)
+==231862==    by 0x589565D: UnknownInlinedFun (gdbusprivate.c:255)
+==231862==    by 0x589565D: _g_dbus_initialize.part.0 (gdbusprivate.c:1994)
+==231862==    by 0x5887DB5: UnknownInlinedFun (gdbusprivate.c:1964)
+==231862==    by 0x5887DB5: g_bus_get_sync (gdbusconnection.c:7928)
+==231862==    by 0x585836F: UnknownInlinedFun (gapplicationimpl-dbus.c:637)
+==231862==    by 0x585836F: g_application_register (gapplication.c:2336)
+==231862== 
+==231862== 336 bytes in 1 blocks are possibly lost in loss record 11,657 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x4011003: calloc (rtld-malloc.h:44)
+==231862==    by 0x4011003: allocate_dtv (dl-tls.c:395)
+==231862==    by 0x4011AE1: _dl_allocate_tls (dl-tls.c:664)
+==231862==    by 0x5F30F14: allocate_stack (allocatestack.c:429)
+==231862==    by 0x5F30F14: pthread_create@@GLIBC_2.34 (pthread_create.c:655)
+==231862==    by 0x59D6FC5: UnknownInlinedFun (gthread-posix.c:1298)
+==231862==    by 0x59D6FC5: g_thread_new_internal (gthread.c:939)
+==231862==    by 0x59D71ED: g_thread_new (gthread.c:892)
+==231862==    by 0x59A7D2E: g_get_worker_context (gmain.c:6469)
+==231862==    by 0x5823EDE: UnknownInlinedFun (gtask.c:2421)
+==231862==    by 0x5823EDE: g_task_get_type_once (gtask.c:629)
+==231862==    by 0x5823FA4: g_task_get_type (gtask.c:629)
+==231862==    by 0x589565D: UnknownInlinedFun (gdbusprivate.c:255)
+==231862==    by 0x589565D: _g_dbus_initialize.part.0 (gdbusprivate.c:1994)
+==231862==    by 0x5887DB5: UnknownInlinedFun (gdbusprivate.c:1964)
+==231862==    by 0x5887DB5: g_bus_get_sync (gdbusconnection.c:7928)
+==231862==    by 0x585836F: UnknownInlinedFun (gapplicationimpl-dbus.c:637)
+==231862==    by 0x585836F: g_application_register (gapplication.c:2336)
+==231862== 
+==231862== 336 bytes in 1 blocks are possibly lost in loss record 11,658 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x4011003: calloc (rtld-malloc.h:44)
+==231862==    by 0x4011003: allocate_dtv (dl-tls.c:395)
+==231862==    by 0x4011AE1: _dl_allocate_tls (dl-tls.c:664)
+==231862==    by 0x5F30F14: allocate_stack (allocatestack.c:429)
+==231862==    by 0x5F30F14: pthread_create@@GLIBC_2.34 (pthread_create.c:655)
+==231862==    by 0x59D6FC5: UnknownInlinedFun (gthread-posix.c:1298)
+==231862==    by 0x59D6FC5: g_thread_new_internal (gthread.c:939)
+==231862==    by 0x59D71ED: g_thread_new (gthread.c:892)
+==231862==    by 0x587C923: UnknownInlinedFun (gdbusprivate.c:308)
+==231862==    by 0x587C923: UnknownInlinedFun (gdbusprivate.c:1708)
+==231862==    by 0x587C923: initable_init (gdbusconnection.c:2951)
+==231862==    by 0x5887D85: g_bus_get_sync (gdbusconnection.c:7936)
+==231862==    by 0x585836F: UnknownInlinedFun (gapplicationimpl-dbus.c:637)
+==231862==    by 0x585836F: g_application_register (gapplication.c:2336)
+==231862==    by 0x5858D21: g_application_real_local_command_line (gapplication.c:1155)
+==231862==    by 0x58590A6: g_application_run (gapplication.c:2681)
+==231862==    by 0x10A624: main (main.cpp:51)
+==231862== 
+==231862== 336 bytes in 1 blocks are possibly lost in loss record 11,659 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x4011003: calloc (rtld-malloc.h:44)
+==231862==    by 0x4011003: allocate_dtv (dl-tls.c:395)
+==231862==    by 0x4011AE1: _dl_allocate_tls (dl-tls.c:664)
+==231862==    by 0x5F30F14: allocate_stack (allocatestack.c:429)
+==231862==    by 0x5F30F14: pthread_create@@GLIBC_2.34 (pthread_create.c:655)
+==231862==    by 0x59D6FC5: UnknownInlinedFun (gthread-posix.c:1298)
+==231862==    by 0x59D6FC5: g_thread_new_internal (gthread.c:939)
+==231862==    by 0x59D71ED: g_thread_new (gthread.c:892)
+==231862==    by 0x637149F: UnknownInlinedFun (pangofc-fontmap.c:1465)
+==231862==    by 0x637149F: pango_fc_font_map_init (pangofc-fontmap.c:1531)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862==    by 0x5ABECFE: UnknownInlinedFun (gobject.c:2603)
+==231862==    by 0x5ABECFE: g_object_new_with_properties (gobject.c:2769)
+==231862==    by 0x5ABFD51: g_object_new (gobject.c:2415)
+==231862==    by 0x54E8CA5: UnknownInlinedFun (pangocairo-fontmap.c:183)
+==231862==    by 0x54E8CA5: pango_cairo_font_map_get_default (pangocairo-fontmap.c:177)
+==231862== 
+==231862== 336 bytes in 1 blocks are possibly lost in loss record 11,660 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x4011003: calloc (rtld-malloc.h:44)
+==231862==    by 0x4011003: allocate_dtv (dl-tls.c:395)
+==231862==    by 0x4011AE1: _dl_allocate_tls (dl-tls.c:664)
+==231862==    by 0x5F30F14: allocate_stack (allocatestack.c:429)
+==231862==    by 0x5F30F14: pthread_create@@GLIBC_2.34 (pthread_create.c:655)
+==231862==    by 0x59D6FC5: UnknownInlinedFun (gthread-posix.c:1298)
+==231862==    by 0x59D6FC5: g_thread_new_internal (gthread.c:939)
+==231862==    by 0x59D71ED: g_thread_new (gthread.c:892)
+==231862==    by 0xB79D413: dconf_gdbus_get_worker_context (dconf-gdbus-thread.c:121)
+==231862==    by 0xB79EB74: dconf_engine_dbus_call_async_func.constprop.0.isra.0 (dconf-gdbus-thread.c:326)
+==231862==    by 0xB79EDB6: UnknownInlinedFun (dconf-engine.c:1056)
+==231862==    by 0xB79EDB6: dconf_settings_backend_subscribe (dconfsettingsbackend.c:135)
+==231862==    by 0x5ABD7F9: g_object_new_internal.part.0 (gobject.c:2657)
+==231862==    by 0x5ABF97A: UnknownInlinedFun (gobject.c:2923)
+==231862==    by 0x5ABF97A: g_object_new_valist (gobject.c:2945)
+==231862==    by 0x5ABFD2F: g_object_new (gobject.c:2418)
+==231862== 
+==231862== 336 bytes in 1 blocks are possibly lost in loss record 11,661 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x4011003: calloc (rtld-malloc.h:44)
+==231862==    by 0x4011003: allocate_dtv (dl-tls.c:395)
+==231862==    by 0x4011AE1: _dl_allocate_tls (dl-tls.c:664)
+==231862==    by 0x5F30F14: allocate_stack (allocatestack.c:429)
+==231862==    by 0x5F30F14: pthread_create@@GLIBC_2.34 (pthread_create.c:655)
+==231862==    by 0x59D6FC5: UnknownInlinedFun (gthread-posix.c:1298)
+==231862==    by 0x59D6FC5: g_thread_new_internal (gthread.c:939)
+==231862==    by 0x59DB80B: g_thread_pool_spawn_thread (gthreadpool.c:298)
+==231862==    by 0x59D61B5: g_thread_proxy (gthread.c:835)
+==231862==    by 0x5F3039C: start_thread (pthread_create.c:447)
+==231862==    by 0x5FB52A3: clone (clone.S:100)
+==231862== 
+==231862== 512 bytes in 8 blocks are definitely lost in loss record 11,799 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0xEEC352C: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEEC3B83: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE93AA2: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE9E355: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE9EE73: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE9F02D: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE4E77E: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xD94F9A7: ???
+==231862==    by 0xEEACDA2: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0xEE4E747: ??? (in /usr/lib/libEGL_nvidia.so.560.35.03)
+==231862==    by 0x4D05D40: gdk_gl_context_real_end_frame (gdkglcontext.c:699)
+==231862== 
+==231862== 520 bytes in 13 blocks are definitely lost in loss record 11,800 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x1E4DB248: ???
+==231862==    by 0x1E4CF84C: ???
+==231862==    by 0x1E4BD6B6: ???
+==231862==    by 0xFBC745E: ???
+==231862==    by 0xFBC7710: ???
+==231862==    by 0xFBD0B89: ???
+==231862==    by 0xFBC97AC: ???
+==231862==    by 0xFBC99A8: ???
+==231862==    by 0xFB40566: ???
+==231862==    by 0xFB408D4: ???
+==231862==    by 0xFB40A26: ???
+==231862== 
+==231862== 567 (184 direct, 383 indirect) bytes in 1 blocks are definitely lost in loss record 11,829 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x1E4C9D8A: ???
+==231862==    by 0x1E4CB082: ???
+==231862==    by 0x1E4BCE5B: ???
+==231862==    by 0x1E4BD227: ???
+==231862==    by 0x1E4BD4ED: ???
+==231862==    by 0x1E4BD7C2: ???
+==231862==    by 0xFBC745E: ???
+==231862==    by 0xFBC7710: ???
+==231862==    by 0xFBD0B89: ???
+==231862==    by 0xFBC97AC: ???
+==231862==    by 0xFBC99A8: ???
+==231862== 
+==231862== 576 bytes in 4 blocks are possibly lost in loss record 11,836 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x59ABE4A: g_malloc (gmem.c:100)
+==231862==    by 0x493CEBE: UnknownInlinedFun (gtkaccessibleattributeset.c:49)
+==231862==    by 0x493CEBE: UnknownInlinedFun (gtkaccessibleattributeset.c:66)
+==231862==    by 0x493CEBE: gtk_at_context_init (gtkatcontext.c:430)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862==    by 0x5ABF97A: UnknownInlinedFun (gobject.c:2923)
+==231862==    by 0x5ABF97A: g_object_new_valist (gobject.c:2945)
+==231862==    by 0x5ABFD2F: g_object_new (gobject.c:2418)
+==231862==    by 0x4BC9970: gtk_at_spi_create_context (gtkatspicontext.c:1876)
+==231862==    by 0x493DD4A: gtk_at_context_create (gtkatcontext.c:704)
+==231862==    by 0x4AFE780: gtk_widget_init (gtkwidget.c:2391)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862== 
+==231862== 608 bytes in 4 blocks are possibly lost in loss record 11,846 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x59ABE4A: g_malloc (gmem.c:100)
+==231862==    by 0x493CE46: UnknownInlinedFun (gtkaccessibleattributeset.c:49)
+==231862==    by 0x493CE46: UnknownInlinedFun (gtkaccessibleattributeset.c:66)
+==231862==    by 0x493CE46: gtk_at_context_init (gtkatcontext.c:426)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862==    by 0x5ABF97A: UnknownInlinedFun (gobject.c:2923)
+==231862==    by 0x5ABF97A: g_object_new_valist (gobject.c:2945)
+==231862==    by 0x5ABFD2F: g_object_new (gobject.c:2418)
+==231862==    by 0x4BC9970: gtk_at_spi_create_context (gtkatspicontext.c:1876)
+==231862==    by 0x493DD4A: gtk_at_context_create (gtkatcontext.c:704)
+==231862==    by 0x4AFE780: gtk_widget_init (gtkwidget.c:2391)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862== 
+==231862== 648 bytes in 3 blocks are possibly lost in loss record 11,856 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x2090C293: alloc (alloc.rs:100)
+==231862==    by 0x2090C293: alloc_impl (alloc.rs:183)
+==231862==    by 0x2090C293: allocate (alloc.rs:243)
+==231862==    by 0x2090C293: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+==231862==    by 0x2090C293: new_uninitialized<alloc::alloc::Global> (mod.rs:1750)
+==231862==    by 0x2090C293: fallible_with_capacity<alloc::alloc::Global> (mod.rs:1788)
+==231862==    by 0x2090C293: prepare_resize<alloc::alloc::Global> (mod.rs:2864)
+==231862==    by 0x2090C293: resize_inner<alloc::alloc::Global> (mod.rs:3060)
+==231862==    by 0x2090C293: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2950)
+==231862==    by 0x2090C293: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1231)
+==231862==    by 0x20B3842C: reserve<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1179)
+==231862==    by 0x20B3842C: find_or_find_insert_slot<(regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID), alloc::alloc::Global, hashbrown::map::equivalent_key::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID>, hashbrown::map::make_hasher::{closure_env#0}<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState>> (mod.rs:1413)
+==231862==    by 0x20B3842C: hashbrown::map::HashMap<K,V,S,A>::insert (map.rs:1754)
+==231862==    by 0x2090D7A1: insert<regex_automata::util::determinize::state::State, regex_automata::hybrid::id::LazyStateID, std::hash::random::RandomState> (map.rs:1106)
+==231862==    by 0x2090D7A1: add_state<regex_automata::hybrid::dfa::{impl#5}::cache_next_state::{closure_env#0}> (dfa.rs:2309)
+==231862==    by 0x2090D7A1: add_builder_state<regex_automata::hybrid::dfa::{impl#5}::cache_next_state::{closure_env#0}> (dfa.rs:2258)
+==231862==    by 0x2090D7A1: regex_automata::hybrid::dfa::Lazy::cache_next_state (dfa.rs:2139)
+==231862==    by 0x20B3C8EE: regex_automata::hybrid::dfa::DFA::next_eoi_state (dfa.rs:1518)
+==231862==    by 0x20B40394: eoi_fwd (search.rs:713)
+==231862==    by 0x20B40394: find_fwd_imp (search.rs:290)
+==231862==    by 0x20B40394: regex_automata::hybrid::search::find_fwd (search.rs:42)
+==231862==    by 0x20B529B3: try_search_fwd (dfa.rs:595)
+==231862==    by 0x20B529B3: try_search_half_fwd (wrappers.rs:669)
+==231862==    by 0x20B529B3: <regex_automata::meta::strategy::Core as regex_automata::meta::strategy::Strategy>::search_half (strategy.rs:752)
+==231862==    by 0x20B21B40: search_half (regex.rs:980)
+==231862==    by 0x20B21B40: regex::regex::string::Regex::is_match_at (string.rs:1057)
+==231862==    by 0x20B21FB8: is_match (string.rs:205)
+==231862==    by 0x20B21FB8: locale_config::LanguageRange::from_unix (lib.rs:393)
+==231862==    by 0x209D79D0: locale_from_environment (api.rs:489)
+==231862==    by 0x209D79D0: rsvg::api::<impl rsvg::accept_language::UserLanguage>::new (api.rs:501)
+==231862==    by 0x209D7CAA: rsvg::api::CairoRenderer::new (api.rs:526)
+==231862==    by 0x2091A3A9: make_renderer (handle.rs:727)
+==231862==    by 0x2091A3A9: librsvg_c::handle::CHandle::get_geometry_sub (handle.rs:737)
+==231862== 
+==231862== 768 bytes in 32 blocks are possibly lost in loss record 11,886 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x59ACB62: g_malloc0 (gmem.c:133)
+==231862==    by 0x4B2F382: gtk_accessible_value_alloc (gtkaccessiblevalue.c:75)
+==231862==    by 0x4B2F5C2: UnknownInlinedFun (gtkaccessiblevalue.c:236)
+==231862==    by 0x4B2F5C2: gtk_accessible_value_get_default_for_relation (gtkaccessiblevalue.c:1840)
+==231862==    by 0x493CEF3: UnknownInlinedFun (gtkaccessibleattributeset.c:54)
+==231862==    by 0x493CEF3: UnknownInlinedFun (gtkaccessibleattributeset.c:66)
+==231862==    by 0x493CEF3: gtk_at_context_init (gtkatcontext.c:430)
+==231862==    by 0x5AD880A: g_type_create_instance (gtype.c:1945)
+==231862==    by 0x5ABD684: g_object_new_internal.part.0 (gobject.c:2606)
+==231862==    by 0x5ABF97A: UnknownInlinedFun (gobject.c:2923)
+==231862==    by 0x5ABF97A: g_object_new_valist (gobject.c:2945)
+==231862==    by 0x5ABFD2F: g_object_new (gobject.c:2418)
+==231862==    by 0x4BC9970: gtk_at_spi_create_context (gtkatspicontext.c:1876)
+==231862==    by 0x493DD4A: gtk_at_context_create (gtkatcontext.c:704)
+==231862==    by 0x4AFE780: gtk_widget_init (gtkwidget.c:2391)
+==231862== 
+==231862== 1,536 bytes in 1 blocks are possibly lost in loss record 12,027 of 12,272
+==231862==    at 0x484BE40: realloc (vg_replace_malloc.c:1800)
+==231862==    by 0x60CBCD4: FcFontSetAdd (fcfs.c:67)
+==231862==    by 0x60DD1F9: UnknownInlinedFun (fcmatch.c:1164)
+==231862==    by 0x60DD1F9: FcFontSetSort (fcmatch.c:1355)
+==231862==    by 0x637374A: UnknownInlinedFun (pangofc-fontmap.c:932)
+==231862==    by 0x637374A: fc_thread_func (pangofc-fontmap.c:972)
+==231862==    by 0x59D61B5: g_thread_proxy (gthread.c:835)
+==231862==    by 0x5F3039C: start_thread (pthread_create.c:447)
+==231862==    by 0x5FB52A3: clone (clone.S:100)
+==231862== 
+==231862== 2,128 bytes in 1 blocks are possibly lost in loss record 12,101 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x20904DB3: alloc (uint_macros.rs:2287)
+==231862==    by 0x20904DB3: alloc_impl (alloc.rs:183)
+==231862==    by 0x20904DB3: allocate (alloc.rs:243)
+==231862==    by 0x20904DB3: do_alloc<alloc::alloc::Global> (alloc.rs:15)
+==231862==    by 0x20904DB3: new_uninitialized<alloc::alloc::Global> (mod.rs:1750)
+==231862==    by 0x20904DB3: fallible_with_capacity<alloc::alloc::Global> (mod.rs:1788)
+==231862==    by 0x20904DB3: prepare_resize<alloc::alloc::Global> (mod.rs:2864)
+==231862==    by 0x20904DB3: resize_inner<alloc::alloc::Global> (mod.rs:3060)
+==231862==    by 0x20904DB3: reserve_rehash_inner<alloc::alloc::Global> (mod.rs:2950)
+==231862==    by 0x20904DB3: hashbrown::raw::RawTable<T,A>::reserve_rehash (mod.rs:1231)
+==231862==    by 0x20901ED3: reserve<(&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags)), alloc::alloc::Global, hashbrown::map::make_hasher::{closure_env#0}<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>> (uint_macros.rs:725)
+==231862==    by 0x20901ED3: reserve<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState, alloc::alloc::Global> (map.rs:1106)
+==231862==    by 0x20901ED3: extend<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState, alloc::alloc::Global, core::iter::adapters::map::Map<alloc::vec::into_iter::IntoIter<(&str, fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), alloc::alloc::Global>, rsvg::element::get_element_creators::{closure#0}::{closure_env#0}>> (map.rs:6510)
+==231862==    by 0x20901ED3: extend<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState, core::iter::adapters::map::Map<alloc::vec::into_iter::IntoIter<(&str, fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), alloc::alloc::Global>, rsvg::element::get_element_creators::{closure#0}::{closure_env#0}>> (map.rs:3144)
+==231862==    by 0x20901ED3: from_iter<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState, core::iter::adapters::map::Map<alloc::vec::into_iter::IntoIter<(&str, fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), alloc::alloc::Global>, rsvg::element::get_element_creators::{closure#0}::{closure_env#0}>> (map.rs:3129)
+==231862==    by 0x20901ED3: collect<core::iter::adapters::map::Map<alloc::vec::into_iter::IntoIter<(&str, fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), alloc::alloc::Global>, rsvg::element::get_element_creators::{closure#0}::{closure_env#0}>, std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>> (iterator.rs:2005)
+==231862==    by 0x20901ED3: {closure#0} (element.rs:274)
+==231862==    by 0x20901ED3: {closure#0}<std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>, rsvg::element::get_element_creators::{closure_env#0}> (once_lock.rs:269)
+==231862==    by 0x20901ED3: {closure#0}<std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>, rsvg::element::get_element_creators::{closure_env#0}>, !> (once_lock.rs:476)
+==231862==    by 0x20901ED3: {closure#0}<std::sync::once_lock::{impl#0}::initialize::{closure_env#0}<std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>, rsvg::element::get_element_creators::{closure_env#0}>, !>> (once.rs:208)
+==231862==    by 0x20901ED3: std::sys::sync::once::futex::Once::call (futex.rs:124)
+==231862==    by 0x20902497: call_once_force<std::sync::once_lock::{impl#0}::initialize::{closure_env#0}<std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>, rsvg::element::get_element_creators::{closure_env#0}>, !>> (intrinsics.rs:2959)
+==231862==    by 0x20902497: std::sync::once_lock::OnceLock<T>::initialize (once_lock.rs:475)
+==231862==    by 0x209FAB14: get_or_try_init<std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>, std::sync::once_lock::{impl#0}::get_or_init::{closure_env#0}<std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>, rsvg::element::get_element_creators::{closure_env#0}>, !> (once_lock.rs:357)
+==231862==    by 0x209FAB14: get_or_init<std::collections::hash::map::HashMap<&str, (fn(&rsvg::session::Session, &rsvg::xml::attributes::Attributes) -> rsvg::element::ElementData, rsvg::element::ElementCreateFlags), std::hash::random::RandomState>, rsvg::element::get_element_creators::{closure_env#0}> (once_lock.rs:269)
+==231862==    by 0x209FAB14: get_element_creators (element.rs:184)
+==231862==    by 0x209FAB14: rsvg::element::Element::new (element.rs:285)
+==231862==    by 0x20A70D69: new_element (node.rs:72)
+==231862==    by 0x20A70D69: append_element (document.rs:944)
+==231862==    by 0x20A70D69: element_creation_start_element (mod.rs:380)
+==231862==    by 0x20A70D69: start_element (mod.rs:0)
+==231862==    by 0x20A70D69: rsvg::xml::xml2_load::sax_start_element_ns_cb (xml2_load.rs:231)
+==231862==    by 0x6AEEB9A: xmlParseStartTag2.constprop.0 (parser.c:9477)
+==231862==    by 0x6A2B462: xmlParseElementStart (parser.c:9877)
+==231862==    by 0x6A2E434: xmlParseElement (parser.c:9812)
+==231862==    by 0x6A2E628: xmlParseDocument (parser.c:10599)
+==231862==    by 0x20A74B03: parse (xml2_load.rs:464)
+==231862==    by 0x20A74B03: {closure#0} (mod.rs:645)
+==231862==    by 0x20A74B03: and_then<alloc::boxed::Box<rsvg::xml::xml2_load::Xml2Parser, alloc::alloc::Global>, rsvg::error::LoadingError, (), rsvg::xml::{impl#2}::parse_from_stream::{closure_env#0}> (result.rs:1346)
+==231862==    by 0x20A74B03: rsvg::xml::XmlState::parse_from_stream (mod.rs:645)
+==231862==    by 0x209E2C08: build_document (mod.rs:658)
+==231862==    by 0x209E2C08: xml_load_from_possibly_compressed_stream (mod.rs:746)
+==231862==    by 0x209E2C08: rsvg::document::Document::load_from_stream (document.rs:159)
+==231862== 
+==231862== 4,691 (1,536 direct, 3,155 indirect) bytes in 2 blocks are definitely lost in loss record 12,171 of 12,272
+==231862==    at 0x484BE40: realloc (vg_replace_malloc.c:1800)
+==231862==    by 0x60D710B: FcPatternObjectInsertElt (fcpat.c:516)
+==231862==    by 0x60E5769: FcPatternObjectListAdd.isra.0 (fcpat.c:650)
+==231862==    by 0x60E0399: FcFontRenderPrepare (fcmatch.c:836)
+==231862==    by 0x60E09E3: FcFontSetMatch (fcmatch.c:1052)
+==231862==    by 0x637365E: UnknownInlinedFun (pangofc-fontmap.c:905)
+==231862==    by 0x637365E: fc_thread_func (pangofc-fontmap.c:968)
+==231862==    by 0x59D61B5: g_thread_proxy (gthread.c:835)
+==231862==    by 0x5F3039C: start_thread (pthread_create.c:447)
+==231862==    by 0x5FB52A3: clone (clone.S:100)
+==231862== 
+==231862== 6,765 (512 direct, 6,253 indirect) bytes in 1 blocks are definitely lost in loss record 12,189 of 12,272
+==231862==    at 0x484BE40: realloc (vg_replace_malloc.c:1800)
+==231862==    by 0x60D710B: FcPatternObjectInsertElt (fcpat.c:516)
+==231862==    by 0x60DB4E0: FcPatternObjectAddWithBinding (fcpat.c:711)
+==231862==    by 0x5638304: _cairo_ft_font_options_substitute (cairo-ft-font.c:4305)
+==231862==    by 0x54E427B: pango_cairo_fc_font_map_fontset_key_substitute (pangocairo-fcfontmap.c:111)
+==231862==    by 0x63766AD: UnknownInlinedFun (pangofc-fontmap.c:2261)
+==231862==    by 0x63766AD: UnknownInlinedFun (pangofc-fontmap.c:2338)
+==231862==    by 0x63766AD: pango_fc_font_map_load_fontset (pangofc-fontmap.c:2440)
+==231862==    by 0x5512BE1: pango_context_get_metrics (pango-context.c:713)
+==231862==    by 0x49E98D7: UnknownInlinedFun (gtklabel.c:1057)
+==231862==    by 0x49E98D7: get_default_widths (gtklabel.c:1082)
+==231862==    by 0x49E9C4F: UnknownInlinedFun (gtklabel.c:1112)
+==231862==    by 0x49E9C4F: gtk_label_measure (gtklabel.c:1307)
+==231862==    by 0x4A8CE16: gtk_widget_query_size_for_orientation (gtksizerequest.c:260)
+==231862==    by 0x496328A: UnknownInlinedFun (gtkcenterlayout.c:245)
+==231862==    by 0x496328A: gtk_center_layout_measure (gtkcenterlayout.c:381)
+==231862==    by 0x49F3D67: gtk_layout_manager_measure (gtklayoutmanager.c:341)
+==231862== 
+==231862== 6,765 (512 direct, 6,253 indirect) bytes in 1 blocks are definitely lost in loss record 12,190 of 12,272
+==231862==    at 0x484BE40: realloc (vg_replace_malloc.c:1800)
+==231862==    by 0x60D710B: FcPatternObjectInsertElt (fcpat.c:516)
+==231862==    by 0x60DB4E0: FcPatternObjectAddWithBinding (fcpat.c:711)
+==231862==    by 0x5638304: _cairo_ft_font_options_substitute (cairo-ft-font.c:4305)
+==231862==    by 0x54E427B: pango_cairo_fc_font_map_fontset_key_substitute (pangocairo-fcfontmap.c:111)
+==231862==    by 0x63766AD: UnknownInlinedFun (pangofc-fontmap.c:2261)
+==231862==    by 0x63766AD: UnknownInlinedFun (pangofc-fontmap.c:2338)
+==231862==    by 0x63766AD: pango_fc_font_map_load_fontset (pangofc-fontmap.c:2440)
+==231862==    by 0x5508B8F: UnknownInlinedFun (itemize.c:902)
+==231862==    by 0x5508B8F: UnknownInlinedFun (itemize.c:962)
+==231862==    by 0x5508B8F: pango_itemize_with_font (itemize.c:1570)
+==231862==    by 0x551DD42: pango_layout_check_lines.part.0.lto_priv.0 (pango-layout.c:4900)
+==231862==    by 0x551209E: UnknownInlinedFun (pango-layout.c:4792)
+==231862==    by 0x551209E: pango_layout_get_extents_internal.lto_priv.0 (pango-layout.c:2925)
+==231862==    by 0x551226D: pango_layout_get_size (pango-layout.c:3166)
+==231862==    by 0x49E9C84: UnknownInlinedFun (gtklabel.c:1118)
+==231862==    by 0x49E9C84: gtk_label_measure (gtklabel.c:1307)
+==231862==    by 0x4A8CE16: gtk_widget_query_size_for_orientation (gtksizerequest.c:260)
+==231862== 
+==231862== 10,672 (184 direct, 10,488 indirect) bytes in 1 blocks are definitely lost in loss record 12,213 of 12,272
+==231862==    at 0x484BC13: calloc (vg_replace_malloc.c:1675)
+==231862==    by 0x1E4C9D8A: ???
+==231862==    by 0x1E4CBD1A: ???
+==231862==    by 0x1E4D4073: ???
+==231862==    by 0x1E4D425C: ???
+==231862==    by 0x1E4D530E: ???
+==231862==    by 0x1E4D5932: ???
+==231862==    by 0x1E4BB47D: ???
+==231862==    by 0x1E4CFF30: ???
+==231862==    by 0x1E4BD242: ???
+==231862==    by 0x1E4BD4ED: ???
+==231862==    by 0x1E4BD7C2: ???
+==231862== 
+==231862== 14,844 (8 direct, 14,836 indirect) bytes in 1 blocks are definitely lost in loss record 12,222 of 12,272
+==231862==    at 0x48447A8: malloc (vg_replace_malloc.c:446)
+==231862==    by 0x129B89D4: ???
+==231862==    by 0x12E37465: ???
+==231862==    by 0x12E375A3: ???
+==231862==    by 0x12E37A4C: ???
+==231862==    by 0x12E3E21A: ???
+==231862==    by 0x12DFE6FF: ???
+==231862==    by 0x12DFF476: ???
+==231862==    by 0x114F0D43: ???
+==231862==    by 0xFC49BAC: ???
+==231862==    by 0xFBAC2A2: ???
+==231862==    by 0xFB65AE4: ???
+==231862== 
+==231862== LEAK SUMMARY:
+==231862==    definitely lost: 4,248 bytes in 35 blocks
+==231862==    indirectly lost: 41,480 bytes in 740 blocks
+==231862==      possibly lost: 11,504 bytes in 99 blocks
+==231862==    still reachable: 6,068,184 bytes in 31,191 blocks
+==231862==         suppressed: 256 bytes in 1 blocks
+==231862== Reachable blocks (those to which a pointer was found) are not shown.
+==231862== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==231862== 
+==231862== For lists of detected and suppressed errors, rerun with: -s
+==231862== ERROR SUMMARY: 65 errors from 51 contexts (suppressed: 1 from 1)
