@@ -2,6 +2,7 @@
 #include "gtk/gtk.h"
 #include <iostream>
 #include "SuperHandler.h"
+#include "adwaita.h"
 
 class TopMenuBar
 {

@@ -1,5 +1,4 @@
 #include "../include/Hotkeys.h"
-#include "adwaita.h"
 
 Hotkeys* Hotkeys::globalInstance = 0x0;
 
@@ -8,7 +7,7 @@ Hotkeys::Hotkeys()
 	eventController = gtk_event_controller_key_new();
 }
 
-void Hotkeys::Create(* app)
+void Hotkeys::Create(GtkApplication* app)
 {
 	g_signal_connect_object(eventController, "key-pressed", G_CALLBACK(QuitApplication), app, G_CONNECT_SWAPPED);
 }

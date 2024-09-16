@@ -6,6 +6,7 @@
 #include "TypingField.h"
 #include "Hotkeys.h"
 #include "FriendsList.h"
+#include "adwaita.h"
 
 class MainWindow
 {
@@ -14,7 +15,7 @@ class MainWindow
     ~MainWindow();
 
   public:
-    void Create(GtkApplication *app);
+    void Create(GtkApplication* app);
     GtkWidget* window = 0x0;
 
   private:

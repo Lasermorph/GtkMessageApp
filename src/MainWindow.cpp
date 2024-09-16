@@ -1,11 +1,11 @@
 #include "MainWindow.h"
-#include "adwaita.h"
 
-void MainWindow::Create(AdwApplication* app)
+
+void MainWindow::Create(GtkApplication* app)
 {
 	// Create a new window
 	// window = gtk_application_window_new(app);
-	window = adw_application_window_new(app);
+	window = adw_application_window_new(app);	
 	gtk_window_set_default_size(GTK_WINDOW(window), 500, 300);
 	gtk_window_set_title(GTK_WINDOW(window), "We made an app");
 
@@ -36,7 +36,8 @@ void MainWindow::Create(AdwApplication* app)
 	gtk_box_append(GTK_BOX(friendsAndMessages), messagesAndTypingFiled);
 	// gtk_box_append(GTK_BOX(messagesAndTypingFiled), button2);
 
-	gtk_window_set_child(GTK_WINDOW(window), friendsAndMessages);
+	// gtk_window_set_child(GTK_WINDOW(window), friendsAndMessages);
+	adw_application_window_set_content(ADW_APPLICATION_WINDOW(window), friendsAndMessages);
 	// gtk_widget_set_size_request(window, 1000, 200);
 	gtk_window_present(GTK_WINDOW(window));
 }
