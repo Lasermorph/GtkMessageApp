@@ -13,10 +13,12 @@ class TopMenuBar
 
 	public:
 		// GMenu* Create(GtkApplication* app, GtkWidget* window);
-		GMenu* Create(GtkApplication* app, GtkWidget* window);
+		GMenu* Create(GtkApplication* app);
 
 	private:
 		void Quit(GSimpleAction* action, GVariant* parameter, gpointer user_data);
+		
+	private:
 		GMenu* topMenuBar = 0x0;
 		GMenu* fileMenu = 0x0;
 		GMenu* editMenu = 0x0;

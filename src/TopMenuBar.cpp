@@ -5,7 +5,24 @@
 TopMenuBar* TopMenuBar::globalInstance = 0x0;
 
 TopMenuBar::TopMenuBar()
-{}	
+{
+	topMenuBar = g_menu_new();
+	fileMenu = g_menu_new();
+	editMenu = g_menu_new();
+	addFriendButton = g_menu_item_new("Add Friend", "app.addFriend");
+	quitButton = g_menu_item_new("Quit", "app.quit");
+	copyButton = g_menu_item_new("Copy", "app.copy");
+
+	g_menu_append_item(fileMenu, addFriendButton);
+	g_menu_append_item(fileMenu, quitButton);
+	g_menu_append_item(editMenu, copyButton);
+
+	g_menu_append_submenu(topMenuBar, "File", G_MENU_MODEL(fileMenu));
+	g_menu_append_submenu(topMenuBar, "Edit", G_MENU_MODEL(editMenu));
+
+	addFriendAction = g_simple_action_new("addFriend", NULL);
+	quitAction = g_simple_action_new("quit", NULL);
+}
 
 TopMenuBar::~TopMenuBar()
 {
@@ -58,25 +75,8 @@ TopMenuBar::~TopMenuBar()
 	}
 }
 
-GMenu* TopMenuBar::Create(GtkApplication* app, GtkWidget* window)
+GMenu* TopMenuBar::Create(GtkApplication* app)
 {
-	topMenuBar = g_menu_new();
-	fileMenu = g_menu_new();
-	editMenu = g_menu_new();
-	addFriendButton = g_menu_item_new("Add Friend", "app.addFriend");
-	quitButton = g_menu_item_new("Quit", "app.quit");
-	copyButton = g_menu_item_new("Copy", "app.copy");
-
-	g_menu_append_item(fileMenu, addFriendButton);
-	g_menu_append_item(fileMenu, quitButton);
-	g_menu_append_item(editMenu, copyButton);
-
-	g_menu_append_submenu(topMenuBar, "File", G_MENU_MODEL(fileMenu));
-	g_menu_append_submenu(topMenuBar, "Edit", G_MENU_MODEL(editMenu));
-
-	addFriendAction = g_simple_action_new("addFriend", NULL);
-	quitAction = g_simple_action_new("quit", NULL);
-
 	g_action_map_add_action(G_ACTION_MAP(app), G_ACTION(addFriendAction));
 	g_action_map_add_action(G_ACTION_MAP(app), G_ACTION(quitAction));
 	g_signal_connect(addFriendAction, "activate", G_CALLBACK(AppAction::AddFriend), topMenuBar);

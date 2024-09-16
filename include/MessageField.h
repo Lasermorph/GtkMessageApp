@@ -8,11 +8,13 @@ class MessageField
 		MessageField();
 		~MessageField();
 
+		static MessageField* globalInstance;
+
 	public:
-	GtkWidget* Create();
+		GtkWidget* Create();
 
 	private:
-	GtkWidget* scrolledWindow = 0x0;
-	GtkWidget* vBox = 0x0;
-	GtkWidget* button = 0x0;
+		GtkWidget* scrolledWindow = 0x0;
+		GtkWidget* vBox = 0x0;
+		GtkWidget* button = 0x0;
 };
