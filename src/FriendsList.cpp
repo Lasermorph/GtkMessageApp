@@ -1,5 +1,4 @@
 #include "../include/FriendsList.h"
-#include <iostream>
 
 FriendsList* FriendsList::globalInstance = 0x0;
 

@@ -9,9 +9,6 @@ class Hotkeys
 
 		static Hotkeys* globalInstance;
 
-	public:
-		void Create(GtkApplication* app, GtkWidget* window);
-
 	private:
 		GtkEventController* eventController = 0x0;
 		GtkShortcut* shortcut = 0x0;

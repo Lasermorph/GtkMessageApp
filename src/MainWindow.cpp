@@ -85,5 +85,4 @@ MainWindow::~MainWindow()
 		delete FriendsList::globalInstance;
 		FriendsList::globalInstance = 0x0;
 	}
-	
 }

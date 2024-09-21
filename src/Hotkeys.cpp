@@ -15,14 +15,3 @@ Hotkeys::Hotkeys(GtkWidget* window, GtkApplication* app)
 	gtk_shortcut_controller_add_shortcut(GTK_SHORTCUT_CONTROLLER(eventController), shortcut);
 	gtk_widget_add_controller(window, eventController);
 }
-
-void Hotkeys::Create(GtkApplication* app, GtkWidget* window)
-{
-	// shortcut = gtk_shortcut_new
-	// (
-	// 	gtk_keyval_trigger_new(GDK_KEY_q, GDK_CONTROL_MASK),
-	// 	gtk_callback_action_new((GtkShortcutFunc)AppAction::ApplicationQuit, app, 0x0)
-	// );
-	// gtk_shortcut_controller_add_shortcut(GTK_SHORTCUT_CONTROLLER(eventController), shortcut);
-	// gtk_widget_add_controller(window, eventController);
-}
