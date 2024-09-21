@@ -1,25 +1,29 @@
 #pragma once
 #include "gtk/gtk.h"
-#include <iostream>
 #include "SuperHandler.h"
-#include "adwaita.h"
 
-class TopMenuBar
+class TopMenu
 {
 	public:
-		TopMenuBar();
-		~TopMenuBar();
+		TopMenu();
+		~TopMenu();
 
-		static TopMenuBar* globalInstance;
+		static TopMenu* globalInstance;
 
 	public:
 		// GMenu* Create(GtkApplication* app, GtkWidget* window);
-		GMenu* Create(GtkApplication* app);
+		GMenu* TopMenuBarCreate(GtkApplication* app);
+		GtkWidget* Create();
 
-	private:
-		void Quit(GSimpleAction* action, GVariant* parameter, gpointer user_data);
+	public:
+		// void Quit(GSimpleAction* action, GVariant* parameter, gpointer user_data);
+		static void Testing(GtkWidget* button, GtkPopover* topMenu);
 		
 	private:
+		GtkWidget* topMenuButton = 0x0;
+		GtkWidget* topMenu = 0x0;
+		GtkWidget* topMenuButtonImage = 0x0;
+
 		GMenu* topMenuBar = 0x0;
 		GMenu* fileMenu = 0x0;
 		GMenu* editMenu = 0x0;

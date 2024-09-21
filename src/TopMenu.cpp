@@ -1,11 +1,13 @@
-#include "../include/TopMenuBar.h"
+#include "../include/TopMenu.h"
 #include "../include/Actions.h"
 #include "../include/SuperHandler.h"
 
-TopMenuBar* TopMenuBar::globalInstance = 0x0;
+TopMenu* TopMenu::globalInstance = 0x0;
 
-TopMenuBar::TopMenuBar()
+TopMenu::TopMenu()
 {
+	// topMenu = gtk_popover_menu_bar_new_from_model(G_MENU_MODEL(topMenuModel));
+
 	topMenuBar = g_menu_new();
 	fileMenu = g_menu_new();
 	editMenu = g_menu_new();
@@ -22,10 +24,31 @@ TopMenuBar::TopMenuBar()
 
 	addFriendAction = g_simple_action_new("addFriend", NULL);
 	quitAction = g_simple_action_new("quit", NULL);
+
+	topMenu = gtk_popover_menu_new_from_model(G_MENU_MODEL(fileMenu));
+	topMenuButton = gtk_button_new();
+	// topMenuButtonImage = gtk_image_new_from_file("image.png");
+
+	GtkCssProvider* topMenuButtonStyle = gtk_css_provider_new();
+
+	// gtk_css_provider_load_from_string(topMenuButtonStyle, ".gaming {background-color: red;}");
+
+	gtk_css_provider_load_from_path(topMenuButtonStyle, "./style/TopMenu.css");
+
+	gtk_widget_add_css_class(topMenuButton, "gaming");
+
+	gtk_button_set_label(GTK_BUTTON(topMenuButton), "gamer");
+
+	// gtk_button_set_child(GTK_BUTTON(topMenuButton), topMenuButtonImage);
+
+	gtk_widget_set_parent(topMenu, topMenuButton);
+	g_signal_connect(topMenuButton, "clicked", G_CALLBACK(Testing), topMenu);
 }
 
-TopMenuBar::~TopMenuBar()
+TopMenu::~TopMenu()
 {
+	gtk_widget_unparent(topMenu);
+
 	if (topMenuBar != 0x0)
 	{
 		g_object_unref(topMenuBar);
@@ -75,18 +98,28 @@ TopMenuBar::~TopMenuBar()
 	}
 }
 
-GMenu* TopMenuBar::Create(GtkApplication* app)
+GMenu* TopMenu::TopMenuBarCreate(GtkApplication* app)
 {
 	g_action_map_add_action(G_ACTION_MAP(app), G_ACTION(addFriendAction));
 	g_action_map_add_action(G_ACTION_MAP(app), G_ACTION(quitAction));
-	g_signal_connect(addFriendAction, "activate", G_CALLBACK(AppAction::AddFriend), topMenuBar);
+	g_signal_connect(addFriendAction, "activate", G_CALLBACK(AppAction::AddFriend), 0x0);
 	g_signal_connect(quitAction, "activate", G_CALLBACK(AppAction::ApplicationQuit), app);
 
 	return topMenuBar;
 }
 
-void TopMenuBar::Quit(GSimpleAction* action, GVariant* parameter, gpointer user_data)
+GtkWidget* TopMenu::Create()
 {
-	std::cout << "Quiting application" << std::endl;
-	g_application_quit(G_APPLICATION(user_data));
+	return topMenuButton;
+}
+
+// void TopMenu::Quit(GSimpleAction* action, GVariant* parameter, gpointer user_data)
+// {
+// 	std::cout << "Quiting application" << std::endl;
+// 	g_application_quit(G_APPLICATION(user_data));
+// }
+
+void TopMenu::Testing(GtkWidget* button, GtkPopover* topMenu)
+{
+	gtk_popover_popup(topMenu);
 }

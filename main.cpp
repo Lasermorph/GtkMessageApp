@@ -20,8 +20,7 @@ static void WhenReady(unsigned char* doublePointer)
 
   app = (GtkApplication**)(&doublePointer[__CPU_SIZE]);
   mwReturn = ((MainWindow***)(doublePointer));
-  **mwReturn = new MainWindow();
-  (**mwReturn)->Create(*app);
+  **mwReturn = new MainWindow(GTK_APPLICATION(*app));
 }
 
 int main (int argc, char *argv[]) 
