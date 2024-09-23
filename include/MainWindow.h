@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-// #include "gtk/gtk.h"
 #include "TopMenu.h"
 #include "MessageField.h"
 #include "TypingField.h"

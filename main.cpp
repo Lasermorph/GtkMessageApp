@@ -1,6 +1,7 @@
 #include "./include/MainWindow.h"
 #include "./include/SuperHandler.h"
 #include "./include/Actions.h"
+// #include "stefflib.h"
 
 #ifndef __CPU_SIZE
 #define __CPU_SIZE sizeof (void*)
@@ -25,6 +26,8 @@ static void WhenReady(unsigned char* doublePointer)
 
 int main (int argc, char *argv[]) 
 {
+  // std::string anders = SteffLib::ReverseString("anders");
+
   // Create a new application
   GtkApplication* app = gtk_application_new("com.example.GtkApplication", G_APPLICATION_DEFAULT_FLAGS);
   

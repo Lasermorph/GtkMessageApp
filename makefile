@@ -16,12 +16,15 @@ CXX_OPTIMIZE:=-g3
 CXX_FLAGS:=$(CXX_OPTIMIZE) $(GTK4_FLAGS) $(CXX_VERSION) $(CUSTOM_INCLUDE)
 
 CXX_LINK:=$(GTK4_LINK)
-default: friendslist.o hotkeys.o actions.o typingfield.o superhandler.o messagefield.o topmenu.o mainwindow.o main.o
+default: menu.o friendslist.o hotkeys.o actions.o typingfield.o superhandler.o messagefield.o topmenu.o mainwindow.o main.o
 	$(CXX_COMPILER) $(CXX_FLAGS) *.o -o $(BIN) $(CXX_LINK)
 
 clean:
 	-rm -rf *.o
 	-rm -rf $(BIN)
+
+menu.o:
+	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/Menu.cpp -o menu.o
 
 friendslist.o:
 	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/FriendsList.cpp -o friendslist.o

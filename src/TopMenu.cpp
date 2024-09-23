@@ -1,33 +1,36 @@
 #include "../include/TopMenu.h"
 #include "../include/Actions.h"
 #include "../include/SuperHandler.h"
+#include <iostream>
+#include <vector>
+
 
 TopMenu* TopMenu::globalInstance = 0x0;
 
 TopMenu::TopMenu()
 {
-	// topMenu = gtk_popover_menu_bar_new_from_model(G_MENU_MODEL(topMenuModel));
+	// m_topMenu = gtk_popover_menu_bar_new_from_model(G_MENU_MODEL(topMenuModel));
 
-	topMenuBar = g_menu_new();
-	fileMenu = g_menu_new();
-	editMenu = g_menu_new();
-	addFriendButton = g_menu_item_new("Add Friend", "app.addFriend");
-	quitButton = g_menu_item_new("Quit", "app.quit");
-	copyButton = g_menu_item_new("Copy", "app.copy");
+	m_menus = new std::vector<MtkMenu*>();
 
-	g_menu_append_item(fileMenu, addFriendButton);
-	g_menu_append_item(fileMenu, quitButton);
-	g_menu_append_item(editMenu, copyButton);
+	m_newTopMenuBar = new MtkMenu("topMenuBar");
+	MtkMenu* fileMenu = new MtkMenu("File");
+	MtkMenu* editMenu = new MtkMenu("Edit");
+	MtkMenu* anders = new MtkMenu("anders");
 
-	g_menu_append_submenu(topMenuBar, "File", G_MENU_MODEL(fileMenu));
-	g_menu_append_submenu(topMenuBar, "Edit", G_MENU_MODEL(editMenu));
+	fileMenu->AddMenuItem("Add Friend", "app.addFriend");
+	editMenu->AddMenuItem("Copy", "app.copy");
+	m_newTopMenuBar->AddSubMenu(fileMenu);	
+	m_newTopMenuBar->AddSubMenu(editMenu);
+	fileMenu->AddSubMenu(anders);
+	m_newTopMenuBar->AddMenuItem("Quit", "app.quit");
 
-	addFriendAction = g_simple_action_new("addFriend", NULL);
-	quitAction = g_simple_action_new("quit", NULL);
+	m_addFriendAction = g_simple_action_new("addFriend", NULL);
+	m_quitAction = g_simple_action_new("quit", NULL);
 
-	topMenu = gtk_popover_menu_new_from_model(G_MENU_MODEL(fileMenu));
-	topMenuButton = gtk_button_new();
-	// topMenuButtonImage = gtk_image_new_from_file("image.png");
+	m_topMenu = gtk_popover_menu_new_from_model(G_MENU_MODEL(m_newTopMenuBar->AsGMenu()));
+	m_topMenuButton = gtk_button_new();
+	// m_topMenuButtonImage = gtk_image_new_from_file("image.png");
 
 	GtkCssProvider* topMenuButtonStyle = gtk_css_provider_new();
 
@@ -35,82 +38,53 @@ TopMenu::TopMenu()
 
 	gtk_css_provider_load_from_path(topMenuButtonStyle, "./style/TopMenu.css");
 
-	gtk_widget_add_css_class(topMenuButton, "gaming");
+	gtk_widget_add_css_class(m_topMenuButton, "gaming");
 
-	gtk_button_set_label(GTK_BUTTON(topMenuButton), "gamer");
+	gtk_button_set_label(GTK_BUTTON(m_topMenuButton), "gamer");
 
-	// gtk_button_set_child(GTK_BUTTON(topMenuButton), topMenuButtonImage);
+	// gtk_button_set_child(GTK_BUTTON(m_topMenuButton), m_topMenuButtonImage);
 
-	gtk_widget_set_parent(topMenu, topMenuButton);
-	g_signal_connect(topMenuButton, "clicked", G_CALLBACK(Testing), topMenu);
+	gtk_widget_set_parent(m_topMenu, m_topMenuButton);
+	g_signal_connect(m_topMenuButton, "clicked", G_CALLBACK(TopMenuShow), m_topMenu);
 }
 
 TopMenu::~TopMenu()
 {
-	gtk_widget_unparent(topMenu);
+	gtk_widget_unparent(m_topMenu);
 
-	if (topMenuBar != 0x0)
-	{
-		g_object_unref(topMenuBar);
-		topMenuBar = 0x0;
-	}
+	// gpointer** objectToUnref[] = 
+	// {
+	// 	(gpointer**)&m_topMenuBar, (gpointer**)&m_fileMenu, (gpointer**)&m_editMenu, (gpointer**)&m_addFriendButton,
+	// 	(gpointer**)&m_quitButton, (gpointer**)&m_copyButton, (gpointer**)&m_addFriendAction, (gpointer**)&m_quitAction
+	// };
 
-	if (fileMenu != 0x0)
-	{
-		g_object_unref(fileMenu);
-		fileMenu = 0x0;
-	}
-
-	if (editMenu != 0x0)
-	{
-		g_object_unref(editMenu);
-		editMenu = 0x0;
-	}
-
-	if (addFriendButton != 0x0)
-	{
-		g_object_unref(addFriendButton);
-		addFriendButton = 0x0;
-	}
-
-	if (quitButton != 0x0)
-	{
-		g_object_unref(quitButton);
-		quitButton = 0x0;
-	}
-
-	if (copyButton != 0x0)
-	{
-		g_object_unref(copyButton);
-		copyButton = 0x0;
-	}
-
-	if (addFriendAction != 0x0)
-	{
-		g_object_unref(addFriendAction);
-		addFriendAction = 0x0;
-	}
-
-	if (quitAction != 0x0)
-	{
-		g_object_unref(quitAction);
-		quitAction = 0x0;
-	}
+	// for (int i = 0; i < sizeof(objectToUnref) / sizeof(objectToUnref[0]); i++)
+	// {
+	// 	if (*objectToUnref != 0x0)
+	// 	{
+	// 		g_object_unref(*objectToUnref[i]);
+	// 		*objectToUnref[i] = 0x0;
+	// 	}
+	// }
+	delete m_menus;
+	delete m_newTopMenuBar;
 }
 
-GMenu* TopMenu::TopMenuBarCreate(GtkApplication* app)
-{
-	g_action_map_add_action(G_ACTION_MAP(app), G_ACTION(addFriendAction));
-	g_action_map_add_action(G_ACTION_MAP(app), G_ACTION(quitAction));
-	g_signal_connect(addFriendAction, "activate", G_CALLBACK(AppAction::AddFriend), 0x0);
-	g_signal_connect(quitAction, "activate", G_CALLBACK(AppAction::ApplicationQuit), app);
 
-	return topMenuBar;
+
+MtkMenu* TopMenu::TopMenuBarCreate(GtkApplication* app)
+{
+	g_action_map_add_action(G_ACTION_MAP(app), G_ACTION(m_addFriendAction));
+	g_action_map_add_action(G_ACTION_MAP(app), G_ACTION(m_quitAction));
+	g_signal_connect(m_addFriendAction, "activate", G_CALLBACK(AppAction::AddFriend), 0x0);
+	g_signal_connect(m_quitAction, "activate", G_CALLBACK(AppAction::ApplicationQuit), app);
+
+	return m_topMenuBar;
 }
 
 GtkWidget* TopMenu::Create()
 {
-	return topMenuButton;
+	return m_topMenuButton;
 }
 
 // void TopMenu::Quit(GSimpleAction* action, GVariant* parameter, gpointer user_data)
@@ -119,7 +93,7 @@ GtkWidget* TopMenu::Create()
 // 	g_application_quit(G_APPLICATION(user_data));
 // }
 
-void TopMenu::Testing(GtkWidget* button, GtkPopover* topMenu)
+void TopMenu::TopMenuShow(GtkWidget* button, GtkPopover* topMenu)
 {
 	gtk_popover_popup(topMenu);
 }

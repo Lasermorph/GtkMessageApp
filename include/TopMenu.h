@@ -1,6 +1,7 @@
 #pragma once
-#include "gtk/gtk.h"
 #include "SuperHandler.h"
+#include <vector>
+#include "Menu.h"
 
 class TopMenu
 {
@@ -12,24 +13,27 @@ class TopMenu
 
 	public:
 		// GMenu* Create(GtkApplication* app, GtkWidget* window);
-		GMenu* TopMenuBarCreate(GtkApplication* app);
+		MtkMenu* TopMenuBarCreate(GtkApplication* app);
 		GtkWidget* Create();
 
 	public:
 		// void Quit(GSimpleAction* action, GVariant* parameter, gpointer user_data);
-		static void Testing(GtkWidget* button, GtkPopover* topMenu);
+		static void TopMenuShow(GtkWidget* button, GtkPopover* topMenu);
 		
 	private:
-		GtkWidget* topMenuButton = 0x0;
-		GtkWidget* topMenu = 0x0;
-		GtkWidget* topMenuButtonImage = 0x0;
+		GtkWidget* m_topMenuButton = 0x0;
+		GtkWidget* m_topMenu = 0x0;
+		GtkWidget* m_topMenuButtonImage = 0x0;
 
-		GMenu* topMenuBar = 0x0;
-		GMenu* fileMenu = 0x0;
-		GMenu* editMenu = 0x0;
-		GMenuItem* addFriendButton = 0x0;
-		GMenuItem* quitButton = 0x0;
-		GMenuItem* copyButton = 0x0;
-		GSimpleAction* addFriendAction = 0x0;
-		GSimpleAction* quitAction = 0x0;
+		MtkMenu* m_topMenuBar = 0x0;
+		MtkMenu* m_fileMenu = 0x0;
+		MtkMenu* m_editMenu = 0x0;
+		GMenuItem* m_addFriendButton = 0x0;
+		GMenuItem* m_quitButton = 0x0;
+		GMenuItem* m_copyButton = 0x0;
+		GSimpleAction* m_addFriendAction = 0x0;
+		GSimpleAction* m_quitAction = 0x0;
+
+		std::vector<MtkMenu*>* m_menus = 0x0;
+		MtkMenu* m_newTopMenuBar = 0x0;
 };

@@ -1,5 +1,4 @@
 #pragma once
-#include "gtk/gtk.h"
 struct SuperHandlerData
 {
   void* ClassHandler;
