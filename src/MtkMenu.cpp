@@ -1,10 +1,10 @@
-#include "../include/Menu.h"
+#include "../include/MtkMenu.h"
 #include <map>
 
 MtkMenu::MtkMenu(const std::string& name)
 {
 	m_name = name;
-	m_menuItems = new std::vector<gpointer>();
+	m_menuItems = new std::vector<MtkMenuItem*>();
 	m_gMenu = g_menu_new();
 	m_subMenus = new std::vector<MtkMenu*>();
 }
@@ -13,7 +13,7 @@ MtkMenu::~MtkMenu()
 {
 	for (size_t i = 0; i < m_menuItems->size(); i++)
 	{
-		g_object_unref(m_menuItems->at(i));
+		delete m_menuItems->at(i);
 		m_menuItems->at(i) = 0x0;
 	}
 
@@ -36,11 +36,10 @@ void MtkMenu::AddSubMenu(MtkMenu* subMenu)
 	m_subMenus->push_back(subMenu);
 }
 
-void MtkMenu::AddMenuItem(std::string label, std::string detailedAction)
+void MtkMenu::AddMenuItem(MtkMenuItem* menuItem)
 {
-	gpointer gp = g_menu_item_new(label.c_str(), detailedAction.c_str());
-	g_menu_append_item(m_gMenu, G_MENU_ITEM(gp));
-	m_menuItems->push_back(gp);
+	g_menu_append_item(m_gMenu, menuItem->AsGMenuItem());
+	m_menuItems->push_back(menuItem);
 }
 
 MtkMenu* MtkMenu::GetSubMenu(const std::string& subMenuName)

@@ -1,12 +1,12 @@
 #pragma once
 #include "SuperHandler.h"
 #include <vector>
-#include "Menu.h"
+#include "MtkMenu.h"
 
 class TopMenu
 {
 	public:
-		TopMenu();
+		TopMenu(GtkApplication* app);
 		~TopMenu();
 
 		static TopMenu* globalInstance;

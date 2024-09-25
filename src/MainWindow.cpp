@@ -1,4 +1,5 @@
 #include "MainWindow.h"
+// #include "adwaita.h"
 
 MainWindow::MainWindow(GtkApplication* app)
 {
@@ -9,7 +10,7 @@ MainWindow::MainWindow(GtkApplication* app)
 	gtk_window_set_title(GTK_WINDOW(window), "We made an app");
 	gtk_window_set_titlebar(GTK_WINDOW(window),headerBar);
 
-	TopMenu::globalInstance = new TopMenu();
+	TopMenu::globalInstance = new TopMenu(app);
 	TypingField::globalInstance = new TypingField();
 	MessageField::globalInstance = new MessageField();
 	FriendsList::globalInstance = new FriendsList();
