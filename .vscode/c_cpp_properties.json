@@ -19,7 +19,9 @@
                 "/usr/include/fribidi/**",
                 "/usr/include/sysprof-6/**",
                 "/usr/include/libpng16/**",
-                "/usr/include/pixman-1/**"
+                "/usr/include/pixman-1/**",
+                "/usr/include/libadwaita-1",
+                "/usr/include/appstream"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",

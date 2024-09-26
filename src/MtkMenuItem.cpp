@@ -41,7 +41,6 @@ void MtkMenuItem::SignalConnect(GCallback func, gpointer data)
 std::string MtkMenuItem::GetActionName()
 {
 	std::string actionName = m_actionName;
-	size_t removeChar = m_actionName.find(".");
-	actionName.erase(0, removeChar + 1);
+	actionName.erase(0, m_actionName.find(".") + 1);
 	return actionName;
 }

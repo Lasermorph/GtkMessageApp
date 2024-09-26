@@ -1,5 +1,4 @@
 #include "MainWindow.h"
-// #include "adwaita.h"
 
 MainWindow::MainWindow(GtkApplication* app)
 {
