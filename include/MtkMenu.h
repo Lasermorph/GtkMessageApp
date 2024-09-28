@@ -1,3 +1,4 @@
+#pragma once
 #include "../include/MtkMenuItem.h"
 #include <gtk/gtk.h>
 #include <iostream>

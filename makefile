@@ -18,12 +18,18 @@ CXX_OPTIMIZE:=-g3
 CXX_FLAGS:=$(CXX_OPTIMIZE) $(GTK4_FLAGS) $(ADW1_FLAGS) $(CXX_VERSION) $(CUSTOM_INCLUDE)
 
 CXX_LINK:=$(GTK4_LINK) $(ADW1_LINK)
-default: menuitem.o menu.o friendslist.o hotkeys.o actions.o typingfield.o superhandler.o messagefield.o topmenu.o mainwindow.o main.o
+default: togglebutton.o button.o menuitem.o menu.o friendslist.o hotkeys.o actions.o typingfield.o superhandler.o messagefield.o topmenu.o mainwindow.o main.o
 	$(CXX_COMPILER) $(CXX_FLAGS) *.o -o $(BIN) $(CXX_LINK)
 
 clean:
 	-rm -rf *.o
 	-rm -rf $(BIN)
+
+togglebutton.o:
+	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkToggleButton.cpp -o togglebutton.o
+
+button.o:
+	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkButton.cpp -o button.o
 
 menuitem.o:
 	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkMenuItem.cpp -o menuitem.o

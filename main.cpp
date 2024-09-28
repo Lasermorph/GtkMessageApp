@@ -1,6 +1,7 @@
 #include "./include/MainWindow.h"
 #include "./include/SuperHandler.h"
 #include "./include/Actions.h"
+#include <adwaita.h>
 // #include "stefflib.h"
 
 #ifndef __CPU_SIZE
@@ -27,6 +28,7 @@ static void WhenReady(unsigned char* doublePointer)
 int main (int argc, char *argv[]) 
 {
   // std::string anders = SteffLib::ReverseString("anders");
+  adw_style_manager_set_color_scheme(adw_style_manager_get_default(), ADW_COLOR_SCHEME_DEFAULT);
 
   // Create a new application
   GtkApplication* app = gtk_application_new("com.example.GtkApplication", G_APPLICATION_DEFAULT_FLAGS);

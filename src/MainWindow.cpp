@@ -1,10 +1,12 @@
 #include "MainWindow.h"
+#include <adwaita.h>
 
 MainWindow::MainWindow(GtkApplication* app)
 {
 	// Create a new window
 	window = gtk_application_window_new(app);
 	headerBar = gtk_header_bar_new();
+	GtkWidget* headerBarTest = adw_header_bar_new();
 	gtk_window_set_default_size(GTK_WINDOW(window), 500, 300);
 	gtk_window_set_title(GTK_WINDOW(window), "We made an app");
 	gtk_window_set_titlebar(GTK_WINDOW(window),headerBar);
@@ -15,8 +17,9 @@ MainWindow::MainWindow(GtkApplication* app)
 	FriendsList::globalInstance = new FriendsList();
 	Hotkeys::globalInstance = new Hotkeys(window, app);
 
+	GtkWidget* testingSplitView = adw_navigation_split_view_new();
+
 	//Containers for the widget placements
-	friendsAndMessages = gtk_box_new(GtkOrientation::GTK_ORIENTATION_HORIZONTAL, 10);
 	messagesAndTypingFiled = gtk_box_new(GtkOrientation::GTK_ORIENTATION_VERTICAL, 0);
 
 	// // When the button is clicked, close the window passed as an argument
@@ -40,11 +43,13 @@ MainWindow::MainWindow(GtkApplication* app)
 
 	gtk_box_append(GTK_BOX(messagesAndTypingFiled), MessageField::globalInstance->Create());
 	gtk_box_append(GTK_BOX(messagesAndTypingFiled), TypingField::globalInstance->Create());
-	gtk_box_append(GTK_BOX(friendsAndMessages), FriendsList::globalInstance->Create());
-	gtk_box_append(GTK_BOX(friendsAndMessages), messagesAndTypingFiled);
-	// gtk_box_append(GTK_BOX(messagesAndTypingFiled), button2);
 
-	gtk_window_set_child(GTK_WINDOW(window), friendsAndMessages);
+	AdwNavigationPage* testingNavigationPage = adw_navigation_page_new(FriendsList::globalInstance->Create(), "MainSideMenu");
+	AdwNavigationPage* testingNavigationContent = adw_navigation_page_new(messagesAndTypingFiled, "MainContent");
+	adw_navigation_split_view_set_sidebar(ADW_NAVIGATION_SPLIT_VIEW(testingSplitView), testingNavigationPage);
+	adw_navigation_split_view_set_content(ADW_NAVIGATION_SPLIT_VIEW(testingSplitView), testingNavigationContent);
+
+	gtk_window_set_child(GTK_WINDOW(window), testingSplitView);
 	// gtk_widget_set_size_request(window, 1000, 200);
 	gtk_window_present(GTK_WINDOW(window));
 }
@@ -55,12 +60,12 @@ MainWindow::~MainWindow()
 	{
 		delete TopMenu::globalInstance;
 		TopMenu::globalInstance = 0x0;
-	}
+	}	
 
-	if (window != 0x0)
-	{
-		gtk_window_destroy(GTK_WINDOW(window));
-	}
+	// if (window != 0x0)
+	// {
+	// 	gtk_window_destroy(GTK_WINDOW(window));
+	// }
 	
 	if (TypingField::globalInstance != 0x0)
 	{

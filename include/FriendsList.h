@@ -21,7 +21,4 @@ class FriendsList
 		GtkWidget* friendButton = 0x0;
 		GtkWidget* friendButton1 = 0x0;
 		GtkWidget* friendButton2 = 0x0;
-
-		GtkWidget* friendsListButton = 0x0;
-		GtkWidget* groupListButton = 0x0;
 };

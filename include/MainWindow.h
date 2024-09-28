@@ -16,7 +16,6 @@ class MainWindow
     GtkWidget* window = 0x0;
 
   private:
-    GtkWidget* friendsAndMessages = 0x0;
     GtkWidget* messagesAndTypingFiled = 0x0;
 
 

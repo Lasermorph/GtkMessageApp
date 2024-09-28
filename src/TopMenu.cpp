@@ -57,11 +57,11 @@ TopMenu::TopMenu(GtkApplication* app)
 
 TopMenu::~TopMenu()
 {
-	gtk_widget_unparent(m_topMenu);
 	delete m_menus;
 	m_menus = 0x0;
 	delete m_newTopMenuBar;
 	m_newTopMenuBar = 0x0;
+	gtk_widget_unparent(m_topMenu);
 }
 
 
