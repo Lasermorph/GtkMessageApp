@@ -1,10 +1,12 @@
 #include "../include/MtkButton.h"
 
+// Button without a label or icon
 MtkButton::MtkButton()
 {
 	m_button = gtk_button_new();
 }
 
+// Button with a label
 MtkButton::MtkButton(const std::string& label)
 {
 	m_button = gtk_button_new_with_label(label.c_str());

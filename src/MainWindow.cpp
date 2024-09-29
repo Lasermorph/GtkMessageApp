@@ -36,6 +36,7 @@ MainWindow::MainWindow(GtkApplication* app)
 
 	// gtk_style_context_set_display()
 
+
 	gtk_header_bar_pack_start(GTK_HEADER_BAR(headerBar), TopMenu::globalInstance->Create());
 
 	gtk_application_set_menubar(app, G_MENU_MODEL(TopMenu::globalInstance->TopMenuBarCreate(app)));
