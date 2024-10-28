@@ -11,7 +11,7 @@ class MtkToggleButton
 
 		GtkToggleButton* AsGtkToggleButton();
 		GtkWidget* AsGtkWidget();
-		void SetGroup(MtkToggleButton* groupParent);
+		void SetGroup(MtkToggleButton groupParent);
 
 	private:
 		GtkWidget* m_button = 0x0;

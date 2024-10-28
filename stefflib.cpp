@@ -10,5 +10,6 @@ std::string SteffLib::ReverseString(const std::string& str)
 	
 	buff[str.length()] = '\0';
 	std::string ret = std::string(buff);
+	delete buff;
 	return ret;
 }

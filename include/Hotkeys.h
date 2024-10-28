@@ -10,7 +10,7 @@ class Hotkeys
 		static Hotkeys* globalInstance;
 
 	private:
-		GtkEventController* eventController = 0x0;
+		GtkEventController* m_eventController = 0x0;
 		GtkShortcut* shortcut = 0x0;
 		GtkShortcutAction* actionS = 0x0;
 		GtkShortcutTrigger* triggerS = 0x0;

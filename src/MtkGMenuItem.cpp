@@ -1,7 +1,7 @@
-#include "../include/MtkMenuItem.h"
+#include "../include/MtkGMenuItem.h"
 #include <stdexcept>
 
-MtkMenuItem::MtkMenuItem(const std::string& label, const std::string& detailedAction)
+MtkGMenuItem::MtkGMenuItem(const std::string& label, const std::string& detailedAction)
 {
 	m_actionName = detailedAction;
 	m_menuItem = g_menu_item_new(label.c_str(), detailedAction.c_str());
@@ -11,7 +11,7 @@ MtkMenuItem::MtkMenuItem(const std::string& label, const std::string& detailedAc
 	}
 }
 
-MtkMenuItem::~MtkMenuItem()
+MtkGMenuItem::~MtkGMenuItem()
 {
 	if (m_action != 0x0)
 	{
@@ -22,23 +22,23 @@ MtkMenuItem::~MtkMenuItem()
 	m_menuItem = 0x0;
 }
 
-GMenuItem* MtkMenuItem::AsGMenuItem()
+GMenuItem* MtkGMenuItem::AsGMenuItem()
 {
 	return m_menuItem;
 }
 
-void MtkMenuItem::ActionMapAdd(const GVariantType* parameter_type, GActionMap *action_map)
+void MtkGMenuItem::ActionMapAdd(const GVariantType* parameter_type, GActionMap *action_map)
 {
 	m_action = g_simple_action_new(GetActionName().c_str(), parameter_type);
 	g_action_map_add_action(G_ACTION_MAP(action_map), G_ACTION(m_action));
 }
 
-void MtkMenuItem::SignalConnect(GCallback func, gpointer data)
+void MtkGMenuItem::SignalConnect(GCallback func, gpointer data)
 {
 	g_signal_connect(m_action, "activate", func, data);
 }
 
-std::string MtkMenuItem::GetActionName()
+std::string MtkGMenuItem::GetActionName()
 {
 	std::string actionName = m_actionName;
 	actionName.erase(0, m_actionName.find(".") + 1);

@@ -1,3 +1,10 @@
 *.o
 Note_to_one_self.txt
 memleak.txt
+.qtcreator
+.kdev4
+GTKMiniProject.kdev4
+.zed
+.clangd-format
+compile_commands.json
+.cache

@@ -2,11 +2,11 @@
 #include <gtk/gtk.h>
 #include <iostream>
 
-class MtkMenuItem
+class MtkGMenuItem
 {
 	public:
-		MtkMenuItem(const std::string& label, const std::string& detailedAction);
-		~MtkMenuItem();
+		MtkGMenuItem(const std::string& label, const std::string& detailedAction);
+		~MtkGMenuItem();
 
 		GMenuItem* AsGMenuItem();
 		void ActionMapAdd(const GVariantType* parameter_type, GActionMap *action_map);

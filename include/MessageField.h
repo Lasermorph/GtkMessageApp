@@ -1,6 +1,6 @@
 #pragma once
 #include "gtk/gtk.h"
-#include <iostream>
+#include "../include/MtkScrolledWindow.h"
 
 class MessageField
 {
@@ -12,9 +12,7 @@ class MessageField
 
 	public:
 		GtkWidget* Create();
-
+	
 	private:
-		GtkWidget* scrolledWindow = 0x0;
-		GtkWidget* vBox = 0x0;
-		GtkWidget* button = 0x0;
+		MtkScrolledWindow m_scrolledWindow;
 };

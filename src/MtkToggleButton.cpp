@@ -10,8 +10,7 @@ MtkToggleButton::MtkToggleButton(const std::string& label)
 	m_button = gtk_toggle_button_new_with_label(label.c_str());
 }
 
-MtkToggleButton::~MtkToggleButton()
-{}
+MtkToggleButton::~MtkToggleButton() = default;
 
 GtkWidget* MtkToggleButton::AsGtkWidget()
 {
@@ -23,7 +22,7 @@ GtkToggleButton* MtkToggleButton::AsGtkToggleButton()
 	return GTK_TOGGLE_BUTTON(m_button);
 }
 
-void MtkToggleButton::SetGroup(MtkToggleButton* groupParent)
+void MtkToggleButton::SetGroup(MtkToggleButton groupParent)
 {
-	gtk_toggle_button_set_group(GTK_TOGGLE_BUTTON(m_button), groupParent->AsGtkToggleButton());
+	gtk_toggle_button_set_group(GTK_TOGGLE_BUTTON(m_button), groupParent.AsGtkToggleButton());
 }

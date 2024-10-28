@@ -1,5 +1,11 @@
-#include "MainWindow.h"
+#include "../include/MainWindow.h"
 #include <adwaita.h>
+#include "TopMenu.h"
+#include "MessageField.h"
+#include "TypingField.h"
+#include "Hotkeys.h"
+#include "FriendsList.h"
+
 
 MainWindow::MainWindow(GtkApplication* app)
 {
@@ -39,7 +45,6 @@ MainWindow::MainWindow(GtkApplication* app)
 
 	gtk_header_bar_pack_start(GTK_HEADER_BAR(headerBar), TopMenu::globalInstance->Create());
 
-	gtk_application_set_menubar(app, G_MENU_MODEL(TopMenu::globalInstance->TopMenuBarCreate(app)));
 	gtk_application_window_set_show_menubar(GTK_APPLICATION_WINDOW(window), true);
 
 	gtk_box_append(GTK_BOX(messagesAndTypingFiled), MessageField::globalInstance->Create());
@@ -61,13 +66,13 @@ MainWindow::~MainWindow()
 	{
 		delete TopMenu::globalInstance;
 		TopMenu::globalInstance = 0x0;
-	}	
+	}
 
 	// if (window != 0x0)
 	// {
 	// 	gtk_window_destroy(GTK_WINDOW(window));
 	// }
-	
+
 	if (TypingField::globalInstance != 0x0)
 	{
 		delete TypingField::globalInstance;

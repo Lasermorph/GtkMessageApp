@@ -1,5 +1,8 @@
 #pragma once
-#include "gtk/gtk.h"
+#include "../include/MtkBox.h"
+#include "../include/MtkToggleButton.h"
+#include "../include/MtkScrolledWindow.h"
+#include <gtk/gtk.h>
 
 class FriendsList
 {
@@ -13,12 +16,5 @@ class FriendsList
 		GtkWidget* Create();
 	
 	private:
-		GtkWidget* friendsAndGroupsContainer = 0x0;
-		GtkWidget* groupAndFriendsList = 0x0;
-
-		GtkWidget* scrolledWindow = 0x0;
-		GtkWidget* friendsListContainer = 0x0;
-		GtkWidget* friendButton = 0x0;
-		GtkWidget* friendButton1 = 0x0;
-		GtkWidget* friendButton2 = 0x0;
+		MtkScrolledWindow m_scrolledWindow;
 };

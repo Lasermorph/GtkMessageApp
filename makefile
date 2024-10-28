@@ -8,6 +8,8 @@ CC_VERSION:=-std=c99
 
 GTK4_FLAGS:=$(shell pkg-config --cflags gtk4)
 GTK4_LINK:=$(shell pkg-config --libs gtk4)
+GTKSOURCEVIEW_FLAGS:=$(shell pkg-config --cflags gtksourceview-5)
+GTKSOURCEVIEW_LINK:=$(shell pkg-config --libs gtksourceview-5)
 ADW1_FLAGS:=$(shell pkg-config --cflags libadwaita-1)
 ADW1_LINK:=$(shell pkg-config --libs libadwaita-1)
 
@@ -15,27 +17,36 @@ CUSTOM_INCLUDE:=-I./include
 
 CXX_OPTIMIZE:=-g3
 
-CXX_FLAGS:=$(CXX_OPTIMIZE) $(GTK4_FLAGS) $(ADW1_FLAGS) $(CXX_VERSION) $(CUSTOM_INCLUDE)
+CXX_FLAGS:=$(CXX_OPTIMIZE) $(GTK4_FLAGS) $(ADW1_FLAGS) $(GTKSOURCEVIEW_FLAGS) $(CXX_VERSION) $(CUSTOM_INCLUDE)
 
-CXX_LINK:=$(GTK4_LINK) $(ADW1_LINK)
-default: togglebutton.o button.o menuitem.o menu.o friendslist.o hotkeys.o actions.o typingfield.o superhandler.o messagefield.o topmenu.o mainwindow.o main.o
+CXX_LINK:=$(GTK4_LINK) $(ADW1_LINK) $(GTKSOURCEVIEW_LINK)
+default: mtktextview.o mtkscrolledwindow.o mtkbox.o mtktogglebutton.o mtkbutton.o mtkgmenuitem.o mtkgmenu.o friendslist.o hotkeys.o actions.o typingfield.o superhandler.o messagefield.o topmenu.o mainwindow.o main.o
 	$(CXX_COMPILER) $(CXX_FLAGS) *.o -o $(BIN) $(CXX_LINK)
 
 clean:
 	-rm -rf *.o
 	-rm -rf $(BIN)
 
-togglebutton.o:
-	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkToggleButton.cpp -o togglebutton.o
+mtktextview.o:
+	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkTextView.cpp -o mtktextview.o
 
-button.o:
-	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkButton.cpp -o button.o
+mtkscrolledwindow.o:
+	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkScrolledWindow.cpp -o mtkscrolledwindow.o
 
-menuitem.o:
-	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkMenuItem.cpp -o menuitem.o
+mtkbox.o:
+	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkBox.cpp -o mtkbox.o
 
-menu.o:
-	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkMenu.cpp -o menu.o
+mtktogglebutton.o:
+	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkToggleButton.cpp -o mtktogglebutton.o
+
+mtkbutton.o:
+	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkButton.cpp -o mtkbutton.o
+
+mtkgmenuitem.o:
+	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkGMenuItem.cpp -o mtkgmenuitem.o
+
+mtkgmenu.o:
+	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/MtkGMenu.cpp -o mtkgmenu.o
 
 friendslist.o:
 	$(CXX_COMPILER) -c $(CXX_FLAGS) ./src/FriendsList.cpp -o friendslist.o

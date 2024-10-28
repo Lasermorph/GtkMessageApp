@@ -1,6 +1,5 @@
 #include "./include/MainWindow.h"
 #include "./include/SuperHandler.h"
-#include "./include/Actions.h"
 #include <adwaita.h>
 // #include "stefflib.h"
 
@@ -51,7 +50,7 @@ int main (int argc, char *argv[])
   // }
   data->FunctionData = doublePointer;
 
-  g_signal_connect(app, "activate", G_CALLBACK (ClasslessSuperHandler), data);
+  g_signal_connect(app, "activate", G_CALLBACK(ClasslessSuperHandler), data);
 
   int status = g_application_run(G_APPLICATION (app), argc, argv);
 

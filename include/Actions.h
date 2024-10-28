@@ -9,4 +9,5 @@ class AppAction
 	public:
 		static void AddFriend(GSimpleAction* action, GVariant* parameter, gpointer user_data);
 		static void ApplicationQuit(GSimpleAction* action, GVariant* parameter, gpointer user_data);
+		static void SendMessage(GSimpleAction* action, GVariant* parameter, gpointer user_data);
 };

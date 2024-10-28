@@ -13,10 +13,10 @@ class TypingField
 		GtkWidget* Create();
 
 	private:
-		GtkWidget* textView = 0x0;
-		GtkWidget* scrolledWindow = 0x0;
-		GtkWidget* button = 0x0;
+		static int SendMessage(GtkWidget* action, GVariant* parameter, gpointer message);
+		static void RemoveChar(GtkEventControllerKey* self, guint keyval, guint keycode, GdkModifierType state, gpointer user_data);
+		static void TMP(GtkEventControllerKey* self, guint keyval, guint keycode, GdkModifierType state, gpointer user_data);
+		static gboolean Update(GtkWidget* widget, GdkFrameClock* frameClock, gpointer user_data);
 
-		// Remeber to delete
-		GtkWidget* tmp = 0x0;
+		GtkWidget* m_scrolledWindow = 0x0;
 };
